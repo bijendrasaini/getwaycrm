@@ -1,15 +1,7 @@
 import { Link } from "react-router-dom";
+import getwayLogo from "@/assets/getway-logo.jpg";
 
 const footerSections = [
-  {
-    title: "Company",
-    links: [
-      { label: "About Us", path: "/about" },
-      { label: "Careers", path: "#" },
-      { label: "Blog", path: "#" },
-      { label: "Press", path: "#" },
-    ],
-  },
   {
     title: "Platform",
     links: [
@@ -17,6 +9,7 @@ const footerSections = [
       { label: "CPaaS", path: "/platform" },
       { label: "AI Voice", path: "/platform" },
       { label: "Automation", path: "/platform" },
+      { label: "Pricing", path: "/pricing" },
     ],
   },
   {
@@ -26,24 +19,27 @@ const footerSections = [
       { label: "Healthcare", path: "/solutions" },
       { label: "Finance", path: "/solutions" },
       { label: "E-Commerce", path: "/solutions" },
+      { label: "Enterprise", path: "/solutions" },
     ],
   },
   {
-    title: "Partners",
+    title: "Company",
     links: [
-      { label: "Channel Partners", path: "/partners" },
-      { label: "White Label", path: "/partners" },
-      { label: "Referral Program", path: "/partners" },
-      { label: "Become a Partner", path: "/partners" },
+      { label: "About Us", path: "/about" },
+      { label: "Careers", path: "/career" },
+      { label: "Partners", path: "/partners" },
+      { label: "Customers", path: "/customers" },
+      { label: "Contact", path: "/contact" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Documentation", path: "#" },
-      { label: "API Reference", path: "#" },
-      { label: "Help Center", path: "#" },
-      { label: "Status", path: "#" },
+      { label: "Blog", path: "/blog" },
+      { label: "Documentation", path: "/docs" },
+      { label: "Help Center", path: "/help" },
+      { label: "API Reference", path: "/api" },
+      { label: "Security", path: "/security" },
     ],
   },
 ];
@@ -52,14 +48,14 @@ const Footer = () => (
   <footer className="footer-dark section-padding">
     <div className="container-wide">
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
-        <div className="col-span-2 md:col-span-3 lg:col-span-1">
-          <div className="flex items-center gap-2 mb-4">
-            <div className="w-8 h-8 rounded-lg glow-button flex items-center justify-center font-display font-bold text-primary-foreground text-sm">G</div>
-            <span className="font-display font-bold text-xl text-primary-foreground tracking-tight">GETWAY</span>
-          </div>
-          <p className="text-[hsl(220,20%,50%)] text-sm leading-relaxed">
-            AI-Powered Business Automation Platform for the modern enterprise.
+        <div className="col-span-2 md:col-span-3 lg:col-span-2">
+          <Link to="/" className="inline-block mb-4">
+            <img src={getwayLogo} alt="GETWAY" className="h-10 w-auto object-contain brightness-110" />
+          </Link>
+          <p className="text-[hsl(200,20%,45%)] text-sm leading-relaxed max-w-xs">
+            AI-Powered Business Automation Platform. Unify your CRM, communications, and workflows into one intelligent system.
           </p>
+          <p className="text-[hsl(200,20%,35%)] text-xs mt-4">Digital Way to Grow</p>
         </div>
         {footerSections.map((section) => (
           <div key={section.title}>
@@ -67,7 +63,7 @@ const Footer = () => (
             <ul className="space-y-2.5">
               {section.links.map((link) => (
                 <li key={link.label}>
-                  <Link to={link.path} className="text-[hsl(220,20%,50%)] hover:text-primary-foreground text-sm transition-colors">
+                  <Link to={link.path} className="text-[hsl(200,20%,45%)] hover:text-primary-foreground text-sm transition-colors">
                     {link.label}
                   </Link>
                 </li>
@@ -76,12 +72,12 @@ const Footer = () => (
           </div>
         ))}
       </div>
-      <div className="border-t border-[hsl(225,30%,12%)] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-[hsl(220,20%,40%)] text-sm">© {new Date().getFullYear()} GETWAY. All rights reserved.</p>
+      <div className="border-t border-[hsl(200,25%,10%)] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p className="text-[hsl(200,20%,35%)] text-sm">© {new Date().getFullYear()} GETWAY. All rights reserved.</p>
         <div className="flex items-center gap-6">
-          <Link to="#" className="text-[hsl(220,20%,40%)] hover:text-primary-foreground text-sm transition-colors">Privacy</Link>
-          <Link to="#" className="text-[hsl(220,20%,40%)] hover:text-primary-foreground text-sm transition-colors">Terms</Link>
-          <Link to="#" className="text-[hsl(220,20%,40%)] hover:text-primary-foreground text-sm transition-colors">Security</Link>
+          <Link to="/privacy" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Privacy Policy</Link>
+          <Link to="/terms" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Terms of Service</Link>
+          <Link to="/security" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Security</Link>
         </div>
       </div>
     </div>

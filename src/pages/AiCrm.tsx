@@ -39,17 +39,18 @@ const benefits = [
 
 const AiCrm = () => (
   <div className="overflow-hidden">
-    <section className="gradient-hero pt-32 pb-20">
-      <div className="container-wide text-center">
+    <section className="gradient-hero pt-32 pb-20 relative">
+      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="container-wide text-center relative z-10">
         <AnimatedSection>
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-electric/10 text-electric-glow border border-electric/20">Flagship Product</span>
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-teal/10 text-teal-light border border-teal/20">Flagship Product</span>
           <h1 className="heading-xl gradient-text-white mb-6">GETWAY AI-Powered CRM</h1>
-          <p className="text-[hsl(220,20%,60%)] text-body-lg max-w-2xl mx-auto mb-8">
+          <p className="text-[hsl(200,20%,55%)] text-body-lg max-w-2xl mx-auto mb-8">
             Your central growth operating system. Manage every customer interaction, automate every workflow, and scale revenue with AI.
           </p>
           <div className="flex flex-wrap justify-center gap-3 mb-10">
             {benefits.map((b) => (
-              <span key={b} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-electric/10 text-electric-glow border border-electric/20">
+              <span key={b} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-teal/10 text-teal-light border border-teal/20">
                 <CheckCircle2 size={14} /> {b}
               </span>
             ))}
@@ -68,9 +69,9 @@ const AiCrm = () => (
           {features.map((f, i) => (
             <AnimatedSection key={f.title} delay={i * 0.04}>
               <div className="glass-card-hover rounded-2xl p-6 h-full">
-                <div className="feature-icon-box mb-4"><f.icon size={22} className="text-electric-glow" /></div>
+                <div className="feature-icon-box mb-4"><f.icon size={22} className="text-teal-light" /></div>
                 <h3 className="font-display font-semibold text-primary-foreground mb-2">{f.title}</h3>
-                <p className="text-[hsl(220,20%,55%)] text-sm leading-relaxed">{f.desc}</p>
+                <p className="text-[hsl(200,20%,50%)] text-sm leading-relaxed">{f.desc}</p>
               </div>
             </AnimatedSection>
           ))}
