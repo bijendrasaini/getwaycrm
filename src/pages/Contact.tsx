@@ -15,13 +15,14 @@ const Contact = () => {
 
   return (
     <div className="overflow-hidden">
-      <section className="gradient-hero pt-32 pb-20">
-        <div className="container-wide text-center">
+      <section className="gradient-hero pt-32 pb-20 relative">
+        <div className="absolute inset-0 grid-pattern opacity-30" />
+        <div className="container-wide text-center relative z-10">
           <AnimatedSection>
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-electric/10 text-electric-glow border border-electric/20">Contact</span>
+            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-teal/10 text-teal-light border border-teal/20">Contact</span>
             <h1 className="heading-xl gradient-text-white mb-6">Let's Talk</h1>
-            <p className="text-[hsl(220,20%,60%)] text-body-lg max-w-2xl mx-auto">
-              Ready to automate your business? Get in touch with our team for a personalized demo.
+            <p className="text-[hsl(200,20%,55%)] text-body-lg max-w-2xl mx-auto">
+              Ready to automate your business? Get in touch for a personalized demo.
             </p>
           </AnimatedSection>
         </div>
@@ -32,7 +33,7 @@ const Contact = () => {
           <div className="grid lg:grid-cols-2 gap-16 max-w-5xl mx-auto">
             <AnimatedSection>
               <h2 className="heading-md gradient-text-white mb-6">Get in Touch</h2>
-              <p className="text-[hsl(220,20%,55%)] text-sm leading-relaxed mb-8">
+              <p className="text-[hsl(200,20%,50%)] text-sm leading-relaxed mb-8">
                 Whether you're looking for a demo, exploring partnership opportunities, or have questions about our platform, we're here to help.
               </p>
               <div className="space-y-6">
@@ -42,9 +43,9 @@ const Contact = () => {
                   { icon: MapPin, label: "Offices", value: "Global — India, UAE, USA" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
-                    <div className="feature-icon-box"><item.icon size={20} className="text-electric-glow" /></div>
+                    <div className="feature-icon-box"><item.icon size={20} className="text-teal-light" /></div>
                     <div>
-                      <div className="text-[hsl(220,20%,50%)] text-xs uppercase tracking-wider">{item.label}</div>
+                      <div className="text-[hsl(200,20%,45%)] text-xs uppercase tracking-wider">{item.label}</div>
                       <div className="text-primary-foreground text-sm font-medium">{item.value}</div>
                     </div>
                   </div>
@@ -60,25 +61,25 @@ const Contact = () => {
                   { key: "company", label: "Company", type: "text" },
                 ].map((field) => (
                   <div key={field.key}>
-                    <label className="text-[hsl(220,20%,65%)] text-sm mb-1.5 block">{field.label}</label>
+                    <label className="text-[hsl(200,20%,60%)] text-sm mb-1.5 block">{field.label}</label>
                     <input
                       type={field.type}
                       required
                       value={form[field.key as keyof typeof form]}
                       onChange={(e) => setForm({ ...form, [field.key]: e.target.value })}
-                      className="w-full px-4 py-3 rounded-xl bg-[hsl(225,30%,10%)] border border-[hsl(225,30%,18%)] text-primary-foreground text-sm focus:outline-none focus:border-electric/50 transition-colors placeholder:text-[hsl(220,20%,35%)]"
+                      className="w-full px-4 py-3 rounded-xl bg-[hsl(200,30%,8%)] border border-[hsl(200,25%,16%)] text-primary-foreground text-sm focus:outline-none focus:border-teal/50 transition-colors placeholder:text-[hsl(200,20%,30%)]"
                       placeholder={field.label}
                     />
                   </div>
                 ))}
                 <div>
-                  <label className="text-[hsl(220,20%,65%)] text-sm mb-1.5 block">Message</label>
+                  <label className="text-[hsl(200,20%,60%)] text-sm mb-1.5 block">Message</label>
                   <textarea
                     required
                     rows={4}
                     value={form.message}
                     onChange={(e) => setForm({ ...form, message: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl bg-[hsl(225,30%,10%)] border border-[hsl(225,30%,18%)] text-primary-foreground text-sm focus:outline-none focus:border-electric/50 transition-colors placeholder:text-[hsl(220,20%,35%)] resize-none"
+                    className="w-full px-4 py-3 rounded-xl bg-[hsl(200,30%,8%)] border border-[hsl(200,25%,16%)] text-primary-foreground text-sm focus:outline-none focus:border-teal/50 transition-colors placeholder:text-[hsl(200,20%,30%)] resize-none"
                     placeholder="Tell us about your needs..."
                   />
                 </div>

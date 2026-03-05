@@ -31,12 +31,13 @@ const plans = [
 
 const Pricing = () => (
   <div className="overflow-hidden">
-    <section className="gradient-hero pt-32 pb-20">
-      <div className="container-wide text-center">
+    <section className="gradient-hero pt-32 pb-20 relative">
+      <div className="absolute inset-0 grid-pattern opacity-30" />
+      <div className="container-wide text-center relative z-10">
         <AnimatedSection>
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-electric/10 text-electric-glow border border-electric/20">Pricing</span>
+          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-teal/10 text-teal-light border border-teal/20">Pricing</span>
           <h1 className="heading-xl gradient-text-white mb-6">Plans That Scale<br />With You</h1>
-          <p className="text-[hsl(220,20%,60%)] text-body-lg max-w-2xl mx-auto">
+          <p className="text-[hsl(200,20%,55%)] text-body-lg max-w-2xl mx-auto">
             Flexible pricing designed for businesses of every size. Get a custom quote tailored to your needs.
           </p>
         </AnimatedSection>
@@ -50,23 +51,23 @@ const Pricing = () => (
             <AnimatedSection key={plan.name} delay={i * 0.1}>
               <div className={`rounded-2xl p-8 h-full flex flex-col ${
                 plan.highlight
-                  ? "glass-card border-electric/40 shadow-[0_0_40px_hsl(225,75%,55%,0.15)]"
+                  ? "glass-card border-teal/40 shadow-[0_0_40px_hsl(187,100%,38%,0.12)]"
                   : "glass-card"
               }`}>
                 {plan.highlight && (
-                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-electric/20 text-electric-glow border border-electric/30 mb-4 self-start">
+                  <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-teal/20 text-teal-light border border-teal/30 mb-4 self-start">
                     Most Popular
                   </span>
                 )}
                 <h3 className="font-display font-bold text-primary-foreground text-2xl mb-2">{plan.name}</h3>
-                <p className="text-[hsl(220,20%,55%)] text-sm mb-6">{plan.desc}</p>
+                <p className="text-[hsl(200,20%,50%)] text-sm mb-6">{plan.desc}</p>
                 <div className="mb-6">
                   <span className="font-display font-bold text-primary-foreground text-3xl">{plan.price}</span>
                 </div>
                 <ul className="space-y-3 mb-8 flex-1">
                   {plan.features.map((f) => (
-                    <li key={f} className="text-[hsl(220,20%,65%)] text-sm flex items-start gap-2">
-                      <CheckCircle2 size={16} className="text-electric shrink-0 mt-0.5" /> {f}
+                    <li key={f} className="text-[hsl(200,20%,60%)] text-sm flex items-start gap-2">
+                      <CheckCircle2 size={16} className="text-teal shrink-0 mt-0.5" /> {f}
                     </li>
                   ))}
                 </ul>
