@@ -19,6 +19,7 @@ import Security from "./pages/Security";
 import Career from "./pages/Career";
 import Privacy from "./pages/Privacy";
 import Terms from "./pages/Terms";
+import BookDemo from "./pages/BookDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
