@@ -113,8 +113,8 @@ const Index = () => {
               transition={{ duration: 0.5, delay: 0.45 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <Link to="/contact" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold text-base inline-flex items-center gap-2">
-                Request Demo <ArrowRight size={18} />
+              <Link to="/demo" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold text-base inline-flex items-center gap-2">
+                Book Demo <ArrowRight size={18} />
               </Link>
               <Link to="/platform" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold text-base">
                 Explore Platform
