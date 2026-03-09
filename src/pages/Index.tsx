@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
+import ComparisonSection from "@/components/ComparisonSection";
+import PlatformDiagram from "@/components/PlatformDiagram";
 
 const stats = [
   { number: "20,000+", label: "Businesses Served" },
@@ -113,8 +115,8 @@ const Index = () => {
               transition={{ duration: 0.5, delay: 0.45 }}
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              <Link to="/contact" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold text-base inline-flex items-center gap-2">
-                Request Demo <ArrowRight size={18} />
+              <Link to="/demo" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold text-base inline-flex items-center gap-2">
+                Book Demo <ArrowRight size={18} />
               </Link>
               <Link to="/platform" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold text-base">
                 Explore Platform
@@ -190,6 +192,12 @@ const Index = () => {
           </AnimatedSection>
         </div>
       </section>
+
+      {/* Platform Diagram */}
+      <PlatformDiagram />
+
+      {/* Comparison Section */}
+      <ComparisonSection />
 
       {/* Platform Infrastructure */}
       <section className="gradient-section-alt section-padding">
@@ -284,8 +292,8 @@ const Index = () => {
               Join 20,000+ businesses running on GETWAY's AI-powered automation platform.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/contact" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
-                Request Demo <ArrowRight size={18} />
+              <Link to="/demo" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
+                Book Demo <ArrowRight size={18} />
               </Link>
               <Link to="/partners" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold">
                 Become a Partner

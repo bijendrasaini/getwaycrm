@@ -111,8 +111,8 @@ const Navbar = () => {
           <Link to="/contact" className="outline-button-hero px-4 py-2 rounded-lg text-sm font-medium">
             Contact Sales
           </Link>
-          <Link to="/book-demo" className="glow-button px-4 py-2 rounded-lg text-sm font-medium text-primary-foreground">
-            Request Demo
+          <Link to="/demo" className="glow-button px-4 py-2 rounded-lg text-sm font-medium text-primary-foreground">
+            Book Demo
           </Link>
         </div>
 
@@ -145,7 +145,7 @@ const Navbar = () => {
               ))}
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-[hsl(200,25%,14%)]">
                 <Link to="/contact" className="outline-button-hero px-4 py-3 rounded-lg text-sm font-medium text-center">Contact Sales</Link>
-                <Link to="/book-demo" className="glow-button px-4 py-3 rounded-lg text-sm font-medium text-primary-foreground text-center">Request Demo</Link>
+                <Link to="/demo" className="glow-button px-4 py-3 rounded-lg text-sm font-medium text-primary-foreground text-center">Book Demo</Link>
               </div>
             </div>
           </motion.div>

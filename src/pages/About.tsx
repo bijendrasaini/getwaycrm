@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Rocket, Globe, Shield, Users, TrendingUp, Zap, ArrowRight } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
+import FounderSection from "@/components/FounderSection";
 
 const values = [
   { icon: Rocket, title: "Innovation", desc: "Pushing the boundaries of AI and automation technology." },
@@ -88,7 +89,7 @@ const About = () => (
         </AnimatedSection>
       </div>
     </section>
+    <FounderSection />
   </div>
 );
-
 export default About;

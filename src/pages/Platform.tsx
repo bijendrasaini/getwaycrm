@@ -31,8 +31,8 @@ const Platform = () => (
           <p className="text-[hsl(200,20%,55%)] text-body-lg max-w-2xl mx-auto mb-10">
             Seven powerful pillars working together to automate every aspect of your business operations.
           </p>
-          <Link to="/contact" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
-            Request Demo <ArrowRight size={18} />
+          <Link to="/demo" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
+            Book Demo <ArrowRight size={18} />
           </Link>
         </AnimatedSection>
       </div>
