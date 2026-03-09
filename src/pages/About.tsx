@@ -89,7 +89,7 @@ const About = () => (
         </AnimatedSection>
       </div>
     </section>
+    <FounderSection />
   </div>
 );
-
 export default About;

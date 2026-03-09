@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
+import ComparisonSection from "@/components/ComparisonSection";
+import PlatformDiagram from "@/components/PlatformDiagram";
 
 const stats = [
   { number: "20,000+", label: "Businesses Served" },
