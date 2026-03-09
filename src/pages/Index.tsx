@@ -193,6 +193,12 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Platform Diagram */}
+      <PlatformDiagram />
+
+      {/* Comparison Section */}
+      <ComparisonSection />
+
       {/* Platform Infrastructure */}
       <section className="gradient-section-alt section-padding">
         <div className="container-wide">
