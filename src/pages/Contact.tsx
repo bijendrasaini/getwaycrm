@@ -38,9 +38,9 @@ const Contact = () => {
               </p>
               <div className="space-y-6">
                 {[
-                  { icon: Mail, label: "Email", value: "hello@getway.com" },
-                  { icon: Phone, label: "Phone", value: "+1 (800) GETWAY" },
-                  { icon: MapPin, label: "Offices", value: "Global — India, UAE, USA" },
+                  { icon: Mail, label: "Email", value: "connect@getwaycrm.com" },
+                  { icon: Phone, label: "Phone", value: "+91 92555-22544" },
+                  { icon: Phone, label: "Office", value: "+91 92555-22544" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
                     <div className="feature-icon-box"><item.icon size={20} className="text-teal-light" /></div>
@@ -50,6 +50,19 @@ const Contact = () => {
                     </div>
                   </div>
                 ))}
+                <div className="flex items-center gap-4">
+                  <div className="feature-icon-box"><MapPin size={20} className="text-teal-light" /></div>
+                  <div>
+                    <div className="text-[hsl(200,20%,45%)] text-xs uppercase tracking-wider">Address</div>
+                    <div className="text-primary-foreground text-sm font-medium leading-relaxed">
+                      GETWAY TECHNOLOGY<br />
+                      SCO 24, 2nd Floor,<br />
+                      Huda Market, Sector-10A,<br />
+                      Gurugram, Haryana – 122001<br />
+                      India
+                    </div>
+                  </div>
+                </div>
               </div>
             </AnimatedSection>
 
