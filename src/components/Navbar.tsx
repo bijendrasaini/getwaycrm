@@ -111,8 +111,8 @@ const Navbar = () => {
           <Link to="/contact" className="outline-button-hero px-4 py-2 rounded-lg text-sm font-medium">
             Contact Sales
           </Link>
-          <Link to="/book-demo" className="glow-button px-4 py-2 rounded-lg text-sm font-medium text-primary-foreground">
-            Request Demo
+          <Link to="/demo" className="glow-button px-4 py-2 rounded-lg text-sm font-medium text-primary-foreground">
+            Book Demo
           </Link>
         </div>
 
