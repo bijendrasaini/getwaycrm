@@ -35,10 +35,6 @@ const footerSections = [
   {
     title: "Resources",
     links: [
-      { label: "Blog", path: "/blog" },
-      { label: "Documentation", path: "/docs" },
-      { label: "Help Center", path: "/help" },
-      { label: "API Reference", path: "/api" },
       { label: "Security", path: "/security" },
     ],
   },

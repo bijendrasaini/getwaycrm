@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, BookOpen, FileText, HelpCircle, Code, Puzzle } from "lucide-react";
+import { Menu, X, ChevronDown, Puzzle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import getwayLogo from "@/assets/getway-logo.jpg";
 
@@ -16,10 +16,6 @@ const mainLinks = [
 ];
 
 const resourceLinks = [
-  { icon: BookOpen, label: "Blog", path: "/blog", desc: "Insights and updates" },
-  { icon: FileText, label: "Documentation", path: "/docs", desc: "Guides and references" },
-  { icon: HelpCircle, label: "Help Center", path: "/help", desc: "Get support" },
-  { icon: Code, label: "API", path: "/api", desc: "Developer resources" },
   { icon: Puzzle, label: "Integrations", path: "/integrations", desc: "Connect your tools" },
 ];
 
