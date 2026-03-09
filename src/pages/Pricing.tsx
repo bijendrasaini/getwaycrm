@@ -72,7 +72,7 @@ const Pricing = () => (
                   ))}
                 </ul>
                 <Link
-                  to="/contact"
+                  to={plan.cta === "Contact Sales" ? "/contact" : "/demo"}
                   className={`w-full py-3 rounded-xl font-semibold text-center text-sm inline-block ${
                     plan.highlight ? "glow-button text-primary-foreground" : "outline-button-hero"
                   }`}

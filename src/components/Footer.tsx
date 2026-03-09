@@ -36,6 +36,8 @@ const footerSections = [
     title: "Resources",
     links: [
       { label: "Security", path: "/security" },
+      { label: "FAQ", path: "/faq" },
+      { label: "Demo", path: "/demo" },
     ],
   },
 ];

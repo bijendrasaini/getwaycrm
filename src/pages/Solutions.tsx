@@ -49,8 +49,8 @@ const Solutions = () => (
           ))}
         </div>
         <AnimatedSection className="text-center mt-12">
-          <Link to="/contact" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
-            Discuss Your Industry <ArrowRight size={18} />
+          <Link to="/demo" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
+            Book Demo <ArrowRight size={18} />
           </Link>
         </AnimatedSection>
       </div>

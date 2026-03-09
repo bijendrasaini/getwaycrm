@@ -284,8 +284,8 @@ const Index = () => {
               Join 20,000+ businesses running on GETWAY's AI-powered automation platform.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/contact" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
-                Request Demo <ArrowRight size={18} />
+              <Link to="/demo" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
+                Book Demo <ArrowRight size={18} />
               </Link>
               <Link to="/partners" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold">
                 Become a Partner
