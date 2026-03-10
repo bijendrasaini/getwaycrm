@@ -7,9 +7,25 @@ const Contact = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
+
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      await supabase.functions.invoke("handle-form-submission", {
+        body: {
+          name: form.name,
+          company: form.company,
+          email: form.email,
+          message: form.message,
+          source: "Website Contact",
+        },
+      });
+    } catch (err) {
+      console.error("Form submission error:", err);
+    }
+
     setForm({ name: "", email: "", company: "", message: "" });
   };
 
