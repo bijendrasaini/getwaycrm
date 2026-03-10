@@ -43,10 +43,29 @@ const Partners = () => {
     notes: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
     toast({ title: "Application submitted!", description: "Our team will contact you shortly." });
+
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      await supabase.functions.invoke("handle-form-submission", {
+        body: {
+          name: form.fullName,
+          company: form.company,
+          mobile: form.mobile,
+          email: form.email,
+          city: form.city,
+          message: form.notes,
+          source: "Website Partner",
+          businessProfile: form.businessProfile,
+          interestArea: form.interestArea,
+        },
+      });
+    } catch (err) {
+      console.error("Form submission error:", err);
+    }
   };
 
   return (

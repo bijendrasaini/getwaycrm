@@ -17,10 +17,28 @@ const Demo = () => {
     notes: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
     toast({ title: "Demo request submitted!", description: "Our team will contact you shortly." });
+
+    try {
+      const { supabase } = await import("@/integrations/supabase/client");
+      await supabase.functions.invoke("handle-form-submission", {
+        body: {
+          name: form.fullName,
+          company: form.company,
+          mobile: form.mobile,
+          email: form.email,
+          city: form.city,
+          state: form.state,
+          message: form.notes,
+          source: "Website Demo",
+        },
+      });
+    } catch (err) {
+      console.error("Form submission error:", err);
+    }
   };
 
   return (
