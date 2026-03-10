@@ -16,16 +16,27 @@ const FounderSection = () => (
         </AnimatedSection>
         <AnimatedSection delay={0.2}>
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-teal/10 text-teal-light border border-teal/20">
-            Founder & Leadership
+            Founder & CEO
           </span>
           <h2 className="heading-md gradient-text-white mb-2">Bijendra Saini</h2>
-          <p className="text-teal-light text-sm font-semibold mb-6">Founder & CEO</p>
+          <p className="text-teal-light text-sm font-semibold mb-6">
+            Visionary Entrepreneur | AI Automation Strategist | Business Growth Trainer
+          </p>
           <div className="space-y-4 text-[hsl(200,20%,55%)] text-sm leading-relaxed">
             <p>
-              Bijendra Saini is the Founder & CEO of GETWAY Technology and a business growth mentor focused on helping organizations scale using digital automation, AI tools, and unified communication platforms.
+              Bijendra Saini is the Founder & CEO of GETWAY Technology, a next-generation AI-powered business automation platform designed to help businesses simplify operations, automate workflows, and accelerate growth.
             </p>
             <p>
-              His vision is to empower businesses with intelligent technology that simplifies operations and accelerates growth.
+              With over 20 years of experience in technology, communication platforms, and digital business solutions, Bijendra has helped organizations leverage CRM systems, automation tools, and AI-driven communication platforms to scale faster and operate more efficiently.
+            </p>
+            <p>
+              Alongside his technology leadership, Bijendra Saini is also a highly respected Manifestation Mentor and Business Growth Trainer who has inspired thousands of entrepreneurs and professionals to unlock their true potential and build successful businesses.
+            </p>
+            <p>
+              Known for his ability to simplify complex concepts and turn vision into practical action, he empowers people to create businesses and lives filled with abundance, success, and purpose.
+            </p>
+            <p>
+              His vision with GETWAY AI CRM is to build an intelligent platform that replaces multiple business tools with one powerful AI automation system.
             </p>
           </div>
         </AnimatedSection>
