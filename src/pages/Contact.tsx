@@ -2,13 +2,19 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import { useToast } from "@/hooks/use-toast";
+import { Checkbox } from "@/components/ui/checkbox";
 
 const Contact = () => {
   const { toast } = useToast();
-  const [form, setForm] = useState({ name: "", email: "", company: "", message: "" });
+  const [form, setForm] = useState({ name: "", email: "", phone: "", company: "", message: "" });
+  const [consent, setConsent] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!consent) {
+      toast({ title: "Consent required", description: "Please agree to the communication consent before submitting.", variant: "destructive" });
+      return;
+    }
     toast({ title: "Message sent!", description: "We'll get back to you within 24 hours." });
 
     try {
@@ -18,6 +24,7 @@ const Contact = () => {
           name: form.name,
           company: form.company,
           email: form.email,
+          phone: form.phone,
           message: form.message,
           source: "Website Contact",
         },
@@ -26,7 +33,8 @@ const Contact = () => {
       console.error("Form submission error:", err);
     }
 
-    setForm({ name: "", email: "", company: "", message: "" });
+    setForm({ name: "", email: "", phone: "", company: "", message: "" });
+    setConsent(false);
   };
 
   return (
@@ -56,7 +64,7 @@ const Contact = () => {
                 {[
                   { icon: Mail, label: "Email", value: "connect@getwaycrm.com" },
                   { icon: Phone, label: "Phone", value: "+91 92555-22544" },
-                  { icon: Phone, label: "Office", value: "+91 92555-22544" },
+                  { icon: Phone, label: "Office", value: "+91 93555-22544" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
                     <div className="feature-icon-box"><item.icon size={20} className="text-teal-light" /></div>
@@ -86,7 +94,8 @@ const Contact = () => {
               <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-8 space-y-5">
                 {[
                   { key: "name", label: "Full Name", type: "text" },
-                  { key: "email", label: "Work Email", type: "email" },
+                  { key: "email", label: "Email", type: "email" },
+                  { key: "phone", label: "Phone", type: "tel" },
                   { key: "company", label: "Company", type: "text" },
                 ].map((field) => (
                   <div key={field.key}>
@@ -112,6 +121,19 @@ const Contact = () => {
                     placeholder="Tell us about your needs..."
                   />
                 </div>
+
+                <div className="flex items-start gap-3">
+                  <Checkbox
+                    id="consent"
+                    checked={consent}
+                    onCheckedChange={(checked) => setConsent(checked === true)}
+                    className="mt-0.5 border-[hsl(200,25%,25%)] data-[state=checked]:bg-teal data-[state=checked]:border-teal"
+                  />
+                  <label htmlFor="consent" className="text-[hsl(200,20%,50%)] text-xs leading-relaxed cursor-pointer">
+                    By submitting this form, you hereby grant us permission to contact you via SMS, WhatsApp, RCS, Email, and any other communication channel.
+                  </label>
+                </div>
+
                 <button type="submit" className="glow-button w-full py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center justify-center gap-2">
                   Send Message <Send size={16} />
                 </button>

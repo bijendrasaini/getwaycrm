@@ -7,8 +7,7 @@ const footerSections = [
     links: [
       { label: "AI CRM", path: "/ai-crm" },
       { label: "CPaaS", path: "/platform" },
-      { label: "AI Voice", path: "/platform" },
-      { label: "Automation", path: "/platform" },
+      { label: "Integrations", path: "/integrations" },
       { label: "Pricing", path: "/pricing" },
     ],
   },
@@ -19,7 +18,6 @@ const footerSections = [
       { label: "Healthcare", path: "/solutions" },
       { label: "Finance", path: "/solutions" },
       { label: "E-Commerce", path: "/solutions" },
-      { label: "Enterprise", path: "/solutions" },
     ],
   },
   {
@@ -38,6 +36,10 @@ const footerSections = [
       { label: "Security", path: "/security" },
       { label: "FAQ", path: "/faq" },
       { label: "Demo", path: "/demo" },
+      { label: "Blog", path: "#" },
+      { label: "Documentation", path: "#" },
+      { label: "API", path: "#" },
+      { label: "Help Center", path: "#" },
     ],
   },
 ];
