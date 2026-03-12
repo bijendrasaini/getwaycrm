@@ -1,22 +1,29 @@
-import { Link } from "react-router-dom";
-import { Rocket, Heart, Globe, Zap, Users, ArrowRight } from "lucide-react";
+import { Rocket, Heart, Globe, Zap, Download } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 
 const perks = [
-  { icon: Rocket, title: "Build the Future", desc: "Work on cutting-edge AI and automation technology used by 20,000+ businesses." },
-  { icon: Heart, title: "Culture First", desc: "We value ownership, transparency, and growth. Your ideas shape our product." },
-  { icon: Globe, title: "Remote Friendly", desc: "Work from anywhere. Our team spans India, UAE, USA, and beyond." },
-  { icon: Zap, title: "Move Fast", desc: "Ship quickly, learn constantly, and make a real impact from day one." },
+  { icon: Rocket, title: "AI Automation Platforms", desc: "Work on advanced AI-powered automation systems used by thousands of businesses." },
+  { icon: Heart, title: "Enterprise SaaS", desc: "Exposure to enterprise SaaS infrastructure and global-scale technology." },
+  { icon: Globe, title: "Leadership Growth", desc: "Leadership growth opportunities working with entrepreneurs and global organizations." },
+  { icon: Zap, title: "Make an Impact", desc: "Work at the intersection of technology, automation and business transformation." },
 ];
 
 const openings = [
-  { title: "Senior Full-Stack Engineer", team: "Engineering", location: "Remote / India" },
-  { title: "AI/ML Engineer", team: "AI Platform", location: "Remote" },
-  { title: "Product Designer", team: "Design", location: "Remote / India" },
-  { title: "Enterprise Account Executive", team: "Sales", location: "USA / UAE" },
-  { title: "DevOps Engineer", team: "Infrastructure", location: "Remote" },
-  { title: "Customer Success Manager", team: "Customer Success", location: "India / UAE" },
+  {
+    title: "Job Opportunity",
+    location: "Gurugram",
+    type: "Full Time",
+    jd: "Business Development Manager",
+    file: "/jd/business-development-manager.pdf",
+  },
+  {
+    title: "Job Opportunity",
+    location: "Gurugram",
+    type: "Full Time",
+    jd: "CRM & Technical Support Executive",
+    file: "/jd/crm-technical-support-executive.pdf",
+  },
 ];
 
 const Career = () => (
@@ -26,9 +33,9 @@ const Career = () => (
       <div className="container-wide text-center relative z-10">
         <AnimatedSection>
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-teal/10 text-teal-light border border-teal/20">Careers</span>
-          <h1 className="heading-xl gradient-text-white mb-6">Build the Future<br />of Automation</h1>
+          <h1 className="heading-xl gradient-text-white mb-6">Build the Future of<br />AI Automation</h1>
           <p className="text-[hsl(200,20%,55%)] text-body-lg max-w-2xl mx-auto">
-            Join a passionate team building AI-powered infrastructure that transforms how businesses operate.
+            GETWAY is building next-generation AI-powered business automation systems. We are looking for talented professionals who want to work at the intersection of technology, automation and business transformation.
           </p>
         </AnimatedSection>
       </div>
@@ -36,7 +43,7 @@ const Career = () => (
 
     <section className="gradient-section-dark section-padding">
       <div className="container-wide">
-        <SectionHeader badge="Why GETWAY" title="Why You'll Love Working Here" />
+        <SectionHeader badge="Why GETWAY" title="Why Join GETWAY" />
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {perks.map((p, i) => (
             <AnimatedSection key={p.title} delay={i * 0.1}>
@@ -49,18 +56,24 @@ const Career = () => (
           ))}
         </div>
 
-        <SectionHeader badge="Open Positions" title="Current Openings" description="We're growing fast and looking for exceptional talent to join our mission." />
+        <SectionHeader badge="Open Positions" title="Current Openings" />
         <div className="max-w-3xl mx-auto space-y-4">
           {openings.map((job, i) => (
-            <AnimatedSection key={job.title} delay={i * 0.06}>
+            <AnimatedSection key={i} delay={i * 0.06}>
               <div className="glass-card-hover rounded-xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <h3 className="font-display font-semibold text-primary-foreground mb-1">{job.title}</h3>
-                  <div className="text-[hsl(200,20%,50%)] text-sm">{job.team} · {job.location}</div>
+                  <div className="text-[hsl(200,20%,50%)] text-sm">
+                    Location: {job.location} · {job.type}
+                  </div>
                 </div>
-                <Link to="/contact" className="glow-button px-5 py-2 rounded-lg text-primary-foreground text-sm font-medium inline-flex items-center gap-1.5 shrink-0">
-                  Apply <ArrowRight size={14} />
-                </Link>
+                <a
+                  href={job.file}
+                  download
+                  className="glow-button px-5 py-2 rounded-lg text-primary-foreground text-sm font-medium inline-flex items-center gap-1.5 shrink-0"
+                >
+                  <Download size={14} /> Download Job Description
+                </a>
               </div>
             </AnimatedSection>
           ))}

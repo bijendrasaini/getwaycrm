@@ -22,6 +22,7 @@ import Terms from "./pages/Terms";
 import Demo from "./pages/Demo";
 import Faq from "./pages/Faq";
 import Integrations from "./pages/Integrations";
+import Login from "./pages/Login";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -32,34 +33,46 @@ const ScrollToTop = () => {
   return null;
 };
 
+const AppLayout = () => {
+  const { pathname } = useLocation();
+  const isLoginPage = pathname === "/login";
+
+  return (
+    <>
+      <ScrollToTop />
+      {!isLoginPage && <Navbar />}
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/platform" element={<Platform />} />
+        <Route path="/ai-crm" element={<AiCrm />} />
+        <Route path="/solutions" element={<Solutions />} />
+        <Route path="/partners" element={<Partners />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/customers" element={<Customers />} />
+        <Route path="/security" element={<Security />} />
+        <Route path="/career" element={<Career />} />
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/demo" element={<Demo />} />
+        <Route path="/faq" element={<Faq />} />
+        <Route path="/integrations" element={<Integrations />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      {!isLoginPage && <Footer />}
+    </>
+  );
+};
+
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
       <Sonner />
       <BrowserRouter>
-        <ScrollToTop />
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/platform" element={<Platform />} />
-          <Route path="/ai-crm" element={<AiCrm />} />
-          <Route path="/solutions" element={<Solutions />} />
-          <Route path="/partners" element={<Partners />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/pricing" element={<Pricing />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/customers" element={<Customers />} />
-          <Route path="/security" element={<Security />} />
-          <Route path="/career" element={<Career />} />
-          <Route path="/privacy" element={<Privacy />} />
-          <Route path="/terms" element={<Terms />} />
-          <Route path="/demo" element={<Demo />} />
-          <Route path="/faq" element={<Faq />} />
-          <Route path="/integrations" element={<Integrations />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-        <Footer />
+        <AppLayout />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { Rocket, Globe, Shield, Users, TrendingUp, Zap, ArrowRight } from "lucide-react";
+import { Rocket, Globe, Shield, Users, TrendingUp } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 import FounderSection from "@/components/FounderSection";
@@ -12,14 +11,6 @@ const values = [
   { icon: TrendingUp, title: "Data-Driven", desc: "Every decision backed by intelligent analytics." },
 ];
 
-const milestones = [
-  { year: "2006", event: "Founded with a vision to simplify business communication" },
-  { year: "2012", event: "Launched enterprise CPaaS infrastructure" },
-  { year: "2018", event: "Introduced AI-powered CRM platform" },
-  { year: "2022", event: "Reached 20,000+ businesses and 150+ partners" },
-  { year: "2024", event: "Next-generation AI Voice Agents and automation engine" },
-];
-
 const About = () => (
   <div className="overflow-hidden">
     <section className="gradient-hero pt-32 pb-20 relative">
@@ -27,9 +18,9 @@ const About = () => (
       <div className="container-wide text-center relative z-10">
         <AnimatedSection>
           <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-teal/10 text-teal-light border border-teal/20">About GETWAY</span>
-          <h1 className="heading-xl gradient-text-white mb-6">20+ Years of<br />Innovation</h1>
+          <h1 className="heading-xl gradient-text-white mb-6">Powering Intelligent<br />Business Automation</h1>
           <p className="text-[hsl(200,20%,55%)] text-body-lg max-w-2xl mx-auto">
-            Since 2006, GETWAY has been building the infrastructure that powers intelligent business automation for enterprises worldwide.
+            GETWAY builds the infrastructure that powers intelligent business automation for enterprises worldwide.
           </p>
         </AnimatedSection>
       </div>
@@ -37,23 +28,13 @@ const About = () => (
 
     <section className="gradient-section-dark section-padding">
       <div className="container-wide">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-teal/10 text-teal-light border border-teal/20">Our Story</span>
             <h2 className="heading-md gradient-text-white mb-6">Building the Future of Business Automation</h2>
             <div className="space-y-4 text-[hsl(200,20%,55%)] text-sm leading-relaxed">
-              <p>GETWAY was founded in 2006 with a clear mission: to simplify how businesses communicate with and serve their customers. What began as a communication infrastructure company has evolved into a comprehensive AI-powered business automation platform.</p>
-              <p>Today, GETWAY serves 20,000+ businesses across industries, powers 550+ educational institutions, and supports 150+ white-label partners worldwide. Our platform integrates CRM, CPaaS, AI voice systems, workflow automation, and revenue intelligence into one unified solution.</p>
-            </div>
-          </AnimatedSection>
-          <AnimatedSection delay={0.2}>
-            <div className="space-y-4">
-              {milestones.map((m) => (
-                <div key={m.year} className="glass-card rounded-xl p-4 flex items-center gap-4">
-                  <span className="font-display font-bold text-teal text-lg shrink-0 w-16">{m.year}</span>
-                  <span className="text-[hsl(200,20%,60%)] text-sm">{m.event}</span>
-                </div>
-              ))}
+              <p>GETWAY was founded with a clear mission: to simplify how businesses communicate with and serve their customers. What began as a communication infrastructure company has evolved into a comprehensive AI-powered business automation platform.</p>
+              <p>Today, GETWAY serves businesses across industries, powering educational institutions and supporting white-label partners worldwide. Our platform integrates CRM, CPaaS, AI voice systems, workflow automation, and revenue intelligence into one unified solution.</p>
             </div>
           </AnimatedSection>
         </div>
@@ -92,4 +73,5 @@ const About = () => (
     <FounderSection />
   </div>
 );
+
 export default About;
