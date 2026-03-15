@@ -14,6 +14,13 @@ const openings = [
     title: "Job Opportunity",
     location: "Gurugram",
     type: "Full Time",
+    jd: "CRM & Technical Support Executive",
+    file: "/jd/crm-technical-support-executive.pdf",
+  },
+  {
+    title: "Job Opportunity",
+    location: "Gurugram",
+    type: "Full Time",
     jd: "Business Development Manager",
     file: "/jd/business-development-manager.pdf",
   },
@@ -21,8 +28,8 @@ const openings = [
     title: "Job Opportunity",
     location: "Gurugram",
     type: "Full Time",
-    jd: "CRM & Technical Support Executive",
-    file: "/jd/crm-technical-support-executive.pdf",
+    jd: "Sales Manager",
+    file: "/jd/sales-manager.pdf",
   },
 ];
 
@@ -63,6 +70,7 @@ const Career = () => (
               <div className="glass-card-hover rounded-xl p-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <h3 className="font-display font-semibold text-primary-foreground mb-1">{job.title}</h3>
+                  <p className="text-teal-light text-sm font-medium mb-1">{job.jd}</p>
                   <div className="text-[hsl(200,20%,50%)] text-sm">
                     Location: {job.location} · {job.type}
                   </div>
@@ -72,7 +80,7 @@ const Career = () => (
                   download
                   className="glow-button px-5 py-2 rounded-lg text-primary-foreground text-sm font-medium inline-flex items-center gap-1.5 shrink-0"
                 >
-                  <Download size={14} /> Download Job Description
+                  <Download size={14} /> Download JD
                 </a>
               </div>
             </AnimatedSection>

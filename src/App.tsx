@@ -23,6 +23,9 @@ import Demo from "./pages/Demo";
 import Faq from "./pages/Faq";
 import Integrations from "./pages/Integrations";
 import Login from "./pages/Login";
+import Profile from "./pages/Profile";
+import Presentation from "./pages/Presentation";
+import LiveDemo from "./pages/LiveDemo";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -59,6 +62,9 @@ const AppLayout = () => {
         <Route path="/faq" element={<Faq />} />
         <Route path="/integrations" element={<Integrations />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/presentation" element={<Presentation />} />
+        <Route path="/live-demo" element={<LiveDemo />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {!isLoginPage && <Footer />}
