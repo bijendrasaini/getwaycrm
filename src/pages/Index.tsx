@@ -12,6 +12,8 @@ import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 import ComparisonSection from "@/components/ComparisonSection";
 import PlatformDiagram from "@/components/PlatformDiagram";
+import getwayShowcase from "@/assets/getway-crm-showcase.jpg";
+import getwayAllInOne from "@/assets/getway-all-in-one.jpg";
 
 const stats = [
   { number: "20,000+", label: "Businesses Served" },
@@ -129,6 +131,29 @@ const Index = () => {
         </div>
       </section>
 
+      {/* CRM Showcase Image */}
+      <section className="gradient-section-dark py-12">
+        <div className="container-wide">
+          <AnimatedSection>
+            <div className="rounded-2xl overflow-hidden border border-[hsl(200,25%,14%)] shadow-2xl max-w-5xl mx-auto">
+              <img src={getwayShowcase} alt="GETWAY AI-Powered CRM Platform" className="w-full h-auto" />
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Motivational Tagline */}
+      <section className="gradient-section-dark py-10 border-y border-teal/20">
+        <div className="container-wide text-center">
+          <AnimatedSection>
+            <p className="text-2xl md:text-3xl font-bold font-display gradient-text leading-relaxed">
+              Technology को काम करने दो...<br />
+              आप सिर्फ Growth पर Focus करो 🚀
+            </p>
+          </AnimatedSection>
+        </div>
+      </section>
+
       {/* Trust Stats */}
       <section className="gradient-section-dark py-16 border-y border-[hsl(200,25%,10%)]">
         <div className="container-wide">
@@ -189,6 +214,22 @@ const Index = () => {
             <Link to="/ai-crm" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
               Explore AI CRM <ArrowRight size={18} />
             </Link>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* All-in-One Image Section */}
+      <section className="gradient-section-alt section-padding">
+        <div className="container-wide">
+          <SectionHeader
+            badge="All-in-One"
+            title="Run Your Entire Business from One Intelligent Platform"
+            description="All-in-One AI Business Automation Platform"
+          />
+          <AnimatedSection>
+            <div className="rounded-2xl overflow-hidden border border-[hsl(200,25%,14%)] shadow-2xl max-w-5xl mx-auto">
+              <img src={getwayAllInOne} alt="GETWAY All-in-One AI Business Automation Platform" className="w-full h-auto" />
+            </div>
           </AnimatedSection>
         </div>
       </section>
