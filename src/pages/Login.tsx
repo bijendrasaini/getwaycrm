@@ -11,7 +11,7 @@ const Login = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    window.open("https://www.getwaycrm.com/login", "_blank");
+    window.open("https://login.getwaycrm.com", "_blank");
   };
 
   return (

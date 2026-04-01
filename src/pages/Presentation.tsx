@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Maximize2, Download, Play, Pause } from "luc
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 
-const totalSlides = 10;
+const totalSlides = 9;
 
 const Presentation = () => {
   const [current, setCurrent] = useState(1);
@@ -83,8 +83,17 @@ const Presentation = () => {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -30 }}
                   transition={{ duration: 0.3 }}
+                  loading="eager"
                   onError={(e) => {
-                    (e.target as HTMLImageElement).src = "/placeholder.svg";
+                    const img = e.target as HTMLImageElement;
+                    img.style.display = "none";
+                    const parent = img.parentElement;
+                    if (parent && !parent.querySelector(".slide-fallback")) {
+                      const fallback = document.createElement("div");
+                      fallback.className = "slide-fallback absolute inset-0 flex items-center justify-center text-[hsl(200,20%,50%)] text-lg";
+                      fallback.textContent = "Presentation loading...";
+                      parent.appendChild(fallback);
+                    }
                   }}
                 />
               </AnimatePresence>
