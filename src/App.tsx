@@ -6,6 +6,8 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import AIChatbot from "@/components/AIChatbot";
 import Index from "./pages/Index";
 import Platform from "./pages/Platform";
 import AiCrm from "./pages/AiCrm";
@@ -26,6 +28,8 @@ import Login from "./pages/Login";
 import Profile from "./pages/Profile";
 import Presentation from "./pages/Presentation";
 import LiveDemo from "./pages/LiveDemo";
+import RefundPolicy from "./pages/RefundPolicy";
+import CompliancePolicy from "./pages/CompliancePolicy";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -65,9 +69,13 @@ const AppLayout = () => {
         <Route path="/profile" element={<Profile />} />
         <Route path="/presentation" element={<Presentation />} />
         <Route path="/live-demo" element={<LiveDemo />} />
+        <Route path="/refund-policy" element={<RefundPolicy />} />
+        <Route path="/compliance-policy" element={<CompliancePolicy />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {!isLoginPage && <Footer />}
+      {!isLoginPage && <WhatsAppButton />}
+      {!isLoginPage && <AIChatbot />}
     </>
   );
 };

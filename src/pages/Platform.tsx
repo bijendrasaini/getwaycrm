@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Phone, Bot, MessageSquare, Mail, Megaphone, Headphones, ArrowRight, Mic2, Radio } from "lucide-react";
+import { Phone, Bot, MessageSquare, Mail, Megaphone, Headphones, ArrowRight, Radio, CheckCircle2 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 
@@ -27,9 +27,7 @@ const Platform = () => (
             <Link to="/ai-crm" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
               Explore Platform <ArrowRight size={18} />
             </Link>
-            <Link to="/demo" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold">
-              Book Demo
-            </Link>
+            <Link to="/demo" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold">Book Demo</Link>
           </div>
         </AnimatedSection>
       </div>
@@ -52,6 +50,46 @@ const Platform = () => (
       </div>
     </section>
 
+    {/* AI Voice Agents Featured */}
+    <section className="gradient-section-alt section-padding">
+      <div className="container-wide max-w-5xl mx-auto">
+        <AnimatedSection>
+          <div className="glass-card-hover rounded-2xl p-10 md:p-14 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-teal/5 rounded-full blur-[100px]" />
+            <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
+              <div className="flex-1">
+                <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 bg-teal/10 text-teal-light border border-teal/20">AI-Powered</span>
+                <h2 className="heading-md gradient-text-white mb-4">AI Voice Agents at Scale</h2>
+                <p className="text-[hsl(200,20%,55%)] text-sm leading-relaxed mb-6">
+                  Transform your customer interactions with AI-powered voice agents that handle thousands of simultaneous calls. From outbound sales campaigns to inbound support, our voice agents deliver human-like conversations with enterprise reliability.
+                </p>
+                <ul className="space-y-2 mb-6">
+                  {[
+                    "Handle 1000+ simultaneous calls",
+                    "Natural language understanding & responses",
+                    "Seamless CRM integration & call logging",
+                    "Multi-language support for global reach",
+                    "Real-time sentiment analysis",
+                    "Automated appointment scheduling",
+                  ].map((item) => (
+                    <li key={item} className="text-[hsl(200,20%,65%)] text-sm flex items-center gap-2">
+                      <CheckCircle2 size={14} className="text-teal shrink-0" /> {item}
+                    </li>
+                  ))}
+                </ul>
+                <Link to="/demo" className="glow-button px-6 py-3 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2 text-sm">
+                  Book a Demo <ArrowRight size={16} />
+                </Link>
+              </div>
+              <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-teal/20 to-cyan/10 border border-teal/20 flex items-center justify-center shrink-0">
+                <Bot size={72} className="text-teal-light" />
+              </div>
+            </div>
+          </div>
+        </AnimatedSection>
+      </div>
+    </section>
+
     {/* CTA */}
     <section className="gradient-hero section-padding relative">
       <div className="absolute inset-0 grid-pattern opacity-30" />
@@ -65,9 +103,7 @@ const Platform = () => (
             <Link to="/ai-crm" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
               Explore Platform <ArrowRight size={18} />
             </Link>
-            <Link to="/demo" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold">
-              Book Demo
-            </Link>
+            <Link to="/demo" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold">Book Demo</Link>
           </div>
         </AnimatedSection>
       </div>
