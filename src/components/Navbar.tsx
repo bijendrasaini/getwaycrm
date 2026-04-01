@@ -1,22 +1,24 @@
 import { useState, useRef, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, ChevronDown, ExternalLink, Brain, Phone as PhoneIcon, Bot, Globe, GraduationCap, Megaphone, MessageSquare, Radio, Headphones } from "lucide-react";
+import { Menu, X, ChevronDown, ExternalLink, Brain, Phone as PhoneIcon, Bot, Globe, GraduationCap, Megaphone, MessageSquare, Radio, Headphones, Mail, MousePointer, Home, Users, Layers, Briefcase, BookOpen } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import getwayLogo from "@/assets/getway-logo.jpg";
 
 const productsMenu = [
-  { icon: Brain, label: "AI CRM", path: "/ai-crm", desc: "Intelligent customer management" },
-  { icon: PhoneIcon, label: "CPaaS", path: "/platform", desc: "Communication platform" },
-  { icon: Bot, label: "AI Agents", path: "/platform", desc: "Conversational AI voice agents" },
-  { icon: Globe, label: "AI Websites", path: "/solutions", desc: "Smart funnels & websites" },
-  { icon: GraduationCap, label: "AI School ERP", path: "/solutions", desc: "Education management" },
+  { icon: Brain, label: "AI CRM Software", path: "/ai-crm", desc: "Intelligent customer management" },
+  { icon: PhoneIcon, label: "CPaaS Platform", path: "/platform", desc: "Communication platform" },
+  { icon: Bot, label: "AI Voice Agents", path: "/ai-call-automation", desc: "Conversational AI voice agents" },
+  { icon: Globe, label: "AI Websites & Funnels", path: "/solutions", desc: "Smart funnels & websites" },
+  { icon: GraduationCap, label: "AI School ERP & LMS", path: "/solutions", desc: "Education management" },
 ];
 
 const marketingMenu = [
-  { icon: PhoneIcon, label: "AI Call Automation", path: "/platform", desc: "Automated outbound calling" },
-  { icon: MessageSquare, label: "WhatsApp Business API", path: "/platform", desc: "WhatsApp engagement" },
-  { icon: Radio, label: "SMS/RCS Messaging", path: "/platform", desc: "Rich messaging campaigns" },
-  { icon: Headphones, label: "IVR Calling System", path: "/platform", desc: "Smart call routing" },
+  { icon: PhoneIcon, label: "AI Call Automation", path: "/ai-call-automation", desc: "Automated outbound calling" },
+  { icon: MessageSquare, label: "WhatsApp Business API", path: "/whatsapp-marketing", desc: "WhatsApp engagement" },
+  { icon: Radio, label: "SMS / RCS Messaging", path: "/sms-rcs-messaging", desc: "Rich messaging campaigns" },
+  { icon: Megaphone, label: "Voice Broadcasting", path: "/voice-broadcasting", desc: "Mass voice campaigns" },
+  { icon: Mail, label: "Email Marketing", path: "/email-marketing", desc: "Email automation" },
+  { icon: Headphones, label: "IVR & Click-to-Call", path: "/ivr-system", desc: "Smart call routing" },
 ];
 
 const Navbar = () => {
@@ -39,6 +41,9 @@ const Navbar = () => {
     document.addEventListener("mousedown", handler);
     return () => document.removeEventListener("mousedown", handler);
   }, []);
+
+  const linkClass = (path: string) =>
+    `px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${location.pathname === path ? "text-primary-foreground bg-teal/10" : "text-[hsl(200,20%,65%)] hover:text-primary-foreground hover:bg-[hsl(200,25%,13%)]"}`;
 
   const DropdownMenu = ({ items }: { items: typeof productsMenu }) => (
     <motion.div initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: 8 }} transition={{ duration: 0.15 }}
@@ -64,10 +69,13 @@ const Navbar = () => {
 
         {/* Desktop nav */}
         <div className="hidden xl:flex items-center gap-0.5">
+          <Link to="/" className={linkClass("/")}>Home</Link>
+          <Link to="/about" className={linkClass("/about")}>About Us</Link>
+
           <div ref={productsRef} className="relative">
             <button onClick={() => { setProductsOpen(!productsOpen); setMarketingOpen(false); }}
               className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors inline-flex items-center gap-1 ${productsOpen ? "text-primary-foreground bg-teal/10" : "text-[hsl(200,20%,65%)] hover:text-primary-foreground hover:bg-[hsl(200,25%,13%)]"}`}>
-              Products <ChevronDown size={14} className={`transition-transform ${productsOpen ? "rotate-180" : ""}`} />
+              Platform & Products <ChevronDown size={14} className={`transition-transform ${productsOpen ? "rotate-180" : ""}`} />
             </button>
             <AnimatePresence>{productsOpen && <DropdownMenu items={productsMenu} />}</AnimatePresence>
           </div>
@@ -80,9 +88,10 @@ const Navbar = () => {
             <AnimatePresence>{marketingOpen && <DropdownMenu items={marketingMenu} />}</AnimatePresence>
           </div>
 
-          <Link to="/demo" className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${location.pathname === "/demo" ? "text-primary-foreground bg-teal/10" : "text-[hsl(200,20%,65%)] hover:text-primary-foreground hover:bg-[hsl(200,25%,13%)]"}`}>Demo</Link>
-          <Link to="/partners" className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${location.pathname === "/partners" ? "text-primary-foreground bg-teal/10" : "text-[hsl(200,20%,65%)] hover:text-primary-foreground hover:bg-[hsl(200,25%,13%)]"}`}>Partners</Link>
-          <Link to="/pricing" className={`px-3 py-2 rounded-lg text-[13px] font-medium transition-colors ${location.pathname === "/pricing" ? "text-primary-foreground bg-teal/10" : "text-[hsl(200,20%,65%)] hover:text-primary-foreground hover:bg-[hsl(200,25%,13%)]"}`}>Pricing</Link>
+          <Link to="/solutions" className={linkClass("/solutions")}>Solutions</Link>
+          <Link to="/demo" className={linkClass("/demo")}>Demo</Link>
+          <Link to="/partners" className={linkClass("/partners")}>Partners</Link>
+          <Link to="/pricing" className={linkClass("/pricing")}>Pricing</Link>
         </div>
 
         {/* Desktop CTAs */}
@@ -105,9 +114,11 @@ const Navbar = () => {
           <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: "auto" }} exit={{ opacity: 0, height: 0 }}
             className="xl:hidden gradient-section-dark border-t border-[hsl(200,25%,14%)] max-h-[80vh] overflow-y-auto">
             <div className="container-wide py-4 flex flex-col gap-1">
-              {/* Products collapsible */}
+              <Link to="/" className="px-4 py-3 rounded-lg text-[hsl(200,20%,65%)] hover:text-primary-foreground text-sm font-medium transition-colors">Home</Link>
+              <Link to="/about" className="px-4 py-3 rounded-lg text-[hsl(200,20%,65%)] hover:text-primary-foreground text-sm font-medium transition-colors">About Us</Link>
+
               <button onClick={() => setMobileProducts(!mobileProducts)} className="px-4 py-3 rounded-lg text-[hsl(200,20%,65%)] hover:text-primary-foreground text-sm font-medium transition-colors flex items-center justify-between">
-                Products <ChevronDown size={14} className={`transition-transform ${mobileProducts ? "rotate-180" : ""}`} />
+                Platform & Products <ChevronDown size={14} className={`transition-transform ${mobileProducts ? "rotate-180" : ""}`} />
               </button>
               <AnimatePresence>
                 {mobileProducts && (
@@ -121,7 +132,6 @@ const Navbar = () => {
                 )}
               </AnimatePresence>
 
-              {/* Marketing collapsible */}
               <button onClick={() => setMobileMarketing(!mobileMarketing)} className="px-4 py-3 rounded-lg text-[hsl(200,20%,65%)] hover:text-primary-foreground text-sm font-medium transition-colors flex items-center justify-between">
                 Marketing & Automation <ChevronDown size={14} className={`transition-transform ${mobileMarketing ? "rotate-180" : ""}`} />
               </button>
@@ -137,9 +147,11 @@ const Navbar = () => {
                 )}
               </AnimatePresence>
 
+              <Link to="/solutions" className="px-4 py-3 rounded-lg text-[hsl(200,20%,65%)] hover:text-primary-foreground text-sm font-medium transition-colors">Solutions</Link>
               <Link to="/demo" className="px-4 py-3 rounded-lg text-[hsl(200,20%,65%)] hover:text-primary-foreground text-sm font-medium transition-colors">Demo</Link>
               <Link to="/partners" className="px-4 py-3 rounded-lg text-[hsl(200,20%,65%)] hover:text-primary-foreground text-sm font-medium transition-colors">Partners</Link>
               <Link to="/pricing" className="px-4 py-3 rounded-lg text-[hsl(200,20%,65%)] hover:text-primary-foreground text-sm font-medium transition-colors">Pricing</Link>
+              <Link to="/integrations" className="px-4 py-3 rounded-lg text-[hsl(200,20%,65%)] hover:text-primary-foreground text-sm font-medium transition-colors">Integrations</Link>
 
               <div className="flex flex-col gap-2 mt-4 pt-4 border-t border-[hsl(200,25%,14%)]">
                 <a href="https://login.getwaycrm.com" target="_blank" rel="noopener noreferrer" className="outline-button-hero px-4 py-3 rounded-lg text-sm font-medium text-center inline-flex items-center justify-center gap-1.5">

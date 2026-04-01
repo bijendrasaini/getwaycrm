@@ -4,41 +4,43 @@ import getwayLogo from "@/assets/getway-logo.jpg";
 
 const footerSections = [
   {
-    title: "Platform",
+    title: "Platform & Products",
     links: [
-      { label: "AI CRM", path: "/ai-crm" },
-      { label: "CPaaS", path: "/platform" },
-      { label: "Integrations", path: "/integrations" },
+      { label: "AI CRM Software", path: "/ai-crm" },
+      { label: "CPaaS Platform", path: "/platform" },
+      { label: "AI Voice Agents", path: "/ai-call-automation" },
+      { label: "AI Websites & Funnels", path: "/solutions" },
       { label: "Pricing", path: "/pricing" },
-      { label: "Live Demo", path: "/live-demo" },
     ],
   },
   {
-    title: "Solutions",
+    title: "Marketing & Automation",
     links: [
-      { label: "Education", path: "/solutions" },
-      { label: "Healthcare", path: "/solutions" },
-      { label: "Finance", path: "/solutions" },
-      { label: "E-Commerce", path: "/solutions" },
+      { label: "WhatsApp Marketing", path: "/whatsapp-marketing" },
+      { label: "SMS / RCS Messaging", path: "/sms-rcs-messaging" },
+      { label: "Voice Broadcasting", path: "/voice-broadcasting" },
+      { label: "Email Marketing", path: "/email-marketing" },
+      { label: "IVR & Click-to-Call", path: "/ivr-system" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About Us", path: "/about" },
-      { label: "GETWAY Profile", path: "/profile" },
-      { label: "Careers", path: "/career" },
       { label: "Partners", path: "/partners" },
+      { label: "Careers", path: "/career" },
       { label: "Contact", path: "/contact" },
+      { label: "Presentation", path: "/presentation" },
     ],
   },
   {
     title: "Resources",
     links: [
-      { label: "Security", path: "/security" },
+      { label: "Solutions", path: "/solutions" },
+      { label: "Integrations", path: "/integrations" },
       { label: "FAQ", path: "/faq" },
       { label: "Demo", path: "/demo" },
-      { label: "Presentation", path: "/presentation" },
+      { label: "Security", path: "/security" },
     ],
   },
 ];

@@ -12,52 +12,51 @@ serve(async (req) => {
   }
 
   try {
-    const {
-      name,
-      company,
-      mobile,
-      email,
-      city,
-      state,
-      message,
-      source,
-      businessProfile,
-      interestArea,
-    } = await req.json();
+    const body = await req.json();
+    const name = (body.name || "").trim();
+    const company = (body.company || "").trim();
+    const mobile = (body.mobile || "").trim();
+    const email = (body.email || "").trim();
+    const city = (body.city || "").trim();
+    const state = (body.state || "").trim();
+    const message = (body.message || "").trim();
+    const source = (body.source || "Website").trim();
+    const businessProfile = (body.businessProfile || "").trim();
+    const interestArea = (body.interestArea || "").trim();
+    const phone = (body.phone || "").trim();
 
     // 1. Send CRM webhook
     try {
       await fetch("https://www.getwaycrm.com/api/leads/create", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, company, mobile, email, city, state, message, source }),
+        body: JSON.stringify({ name, company, mobile: mobile || phone, email, city, state, message, source }),
       });
     } catch (e) {
       console.error("CRM webhook error:", e);
     }
 
-    // 2. Send WhatsApp admin alert via simple webhook
+    // 2. Log admin alert
     try {
-      const alertMsg = `New Lead Received\n\nName: ${name}\nMobile: ${mobile}\nEmail: ${email}\nCity: ${city || state || "N/A"}\nSource: ${source}`;
+      const alertMsg = `New Lead Received\n\nName: ${name}\nMobile: ${mobile || phone}\nEmail: ${email}\nCity: ${city || state || "N/A"}\nSource: ${source}`;
       console.log("Admin alert:", alertMsg);
-      // WhatsApp alert would go through GETWAY's own API/webhook
     } catch (e) {
-      console.error("WhatsApp alert error:", e);
+      console.error("Alert error:", e);
     }
 
-    // 3. Send notification email to admin using Lovable AI
+    // 3. Send notification emails
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
 
     if (LOVABLE_API_KEY && SUPABASE_URL) {
-      // Send admin notification
+      // Admin notification
       try {
         const adminEmailBody = `
           <h2>New Lead from GETWAY Website</h2>
           <p><strong>Source:</strong> ${source}</p>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Mobile:</strong> ${mobile}</p>
+          <p><strong>Mobile:</strong> ${mobile || phone}</p>
           <p><strong>Company:</strong> ${company || "N/A"}</p>
           <p><strong>City:</strong> ${city || "N/A"}</p>
           <p><strong>State:</strong> ${state || "N/A"}</p>
@@ -66,23 +65,27 @@ serve(async (req) => {
           <p><strong>Message:</strong> ${message || "N/A"}</p>
         `;
 
-        await fetch(`${SUPABASE_URL}/functions/v1/send-transactional-email`, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${LOVABLE_API_KEY}`,
-          },
-          body: JSON.stringify({
-            to: "ceo@getwaygroup.com",
-            subject: `New Lead from GETWAY Website — ${source}`,
-            html: adminEmailBody,
-          }),
-        }).catch((e) => console.error("Admin email error:", e));
+        // Send to both admin emails
+        const adminEmails = ["ceo@getwaygroup.com", "getwayconnect@gmail.com"];
+        for (const adminEmail of adminEmails) {
+          await fetch(`${SUPABASE_URL}/functions/v1/send-transactional-email`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+              Authorization: `Bearer ${LOVABLE_API_KEY}`,
+            },
+            body: JSON.stringify({
+              to: adminEmail,
+              subject: `New Lead from GETWAY Website — ${source}`,
+              html: adminEmailBody,
+            }),
+          }).catch((e) => console.error("Admin email error:", e));
+        }
       } catch (e) {
         console.error("Admin email error:", e);
       }
 
-      // Send auto-reply to user
+      // Auto-reply to user
       if (email) {
         try {
           const userEmailBody = `
@@ -94,7 +97,7 @@ serve(async (req) => {
               <p>For quick assistance, connect with us on WhatsApp:</p>
               <p><a href="https://wa.me/919255522544" style="color: #25D366; font-weight: bold;">Chat on WhatsApp →</a></p>
               <br/>
-              <p>Best Regards,<br/><strong>GETWAY Technology</strong></p>
+              <p>Best Regards,<br/><strong>GETWAY Technology</strong><br/>connect@getway.in | +91 92555-22544</p>
             </div>
           `;
 
@@ -122,7 +125,7 @@ serve(async (req) => {
     });
   } catch (error) {
     console.error("Error:", error);
-    return new Response(JSON.stringify({ error: error.message }), {
+    return new Response(JSON.stringify({ error: (error as Error).message }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });

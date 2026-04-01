@@ -30,6 +30,12 @@ import Presentation from "./pages/Presentation";
 import LiveDemo from "./pages/LiveDemo";
 import RefundPolicy from "./pages/RefundPolicy";
 import CompliancePolicy from "./pages/CompliancePolicy";
+import AiCallAutomation from "./pages/AiCallAutomation";
+import WhatsAppMarketing from "./pages/WhatsAppMarketing";
+import SmsRcsMessaging from "./pages/SmsRcsMessaging";
+import VoiceBroadcasting from "./pages/VoiceBroadcasting";
+import EmailMarketing from "./pages/EmailMarketing";
+import IvrSystem from "./pages/IvrSystem";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -71,6 +77,12 @@ const AppLayout = () => {
         <Route path="/live-demo" element={<LiveDemo />} />
         <Route path="/refund-policy" element={<RefundPolicy />} />
         <Route path="/compliance-policy" element={<CompliancePolicy />} />
+        <Route path="/ai-call-automation" element={<AiCallAutomation />} />
+        <Route path="/whatsapp-marketing" element={<WhatsAppMarketing />} />
+        <Route path="/sms-rcs-messaging" element={<SmsRcsMessaging />} />
+        <Route path="/voice-broadcasting" element={<VoiceBroadcasting />} />
+        <Route path="/email-marketing" element={<EmailMarketing />} />
+        <Route path="/ivr-system" element={<IvrSystem />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {!isLoginPage && <Footer />}
