@@ -173,7 +173,7 @@ const Profile = () => (
             <p className="text-teal-light text-sm font-medium mb-4">CEO, GETWAY Technology</p>
             <p className="text-[hsl(200,20%,50%)] text-sm mb-2">Manifestation Mentor & Business Growth Trainer</p>
             <div className="flex flex-col items-center gap-1 text-[hsl(200,20%,55%)] text-sm mt-4">
-              <span>📞 9355522544</span>
+              <span>📞 9255522544</span>
               <span>📧 ceo@getwaygroup.com</span>
               <span>🌐 www.getwaygroup.com</span>
             </div>

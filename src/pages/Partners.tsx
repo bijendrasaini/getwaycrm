@@ -152,7 +152,7 @@ const Partners = () => {
                 </div>
                 <h2 className="heading-md gradient-text-white mb-3">Thank You!</h2>
                 <p className="text-[hsl(200,20%,55%)] text-sm mb-8">Thank you for applying to the GETWAY Partner Program. Our team will contact you soon.</p>
-                <a href="https://wa.me/919355522544?text=Hello%20GETWAY%20Team,%20I%20am%20interested%20in%20GETWAY%20Partner%20Program" target="_blank" rel="noopener noreferrer"
+                <a href="https://wa.me/919255522544?text=Hello%20GETWAY%20Team,%20I%20am%20interested%20in%20GETWAY%20Partner%20Program" target="_blank" rel="noopener noreferrer"
                   className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2 text-base"
                   style={{ background: "linear-gradient(135deg, #25D366, #128C7E)" }}>
                   <MessageCircle size={20} /> Connect on WhatsApp

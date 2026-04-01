@@ -92,7 +92,7 @@ serve(async (req) => {
               <p>Thank you for your interest in GETWAY AI CRM.</p>
               <p>Our team has received your request and will contact you shortly.</p>
               <p>For quick assistance, connect with us on WhatsApp:</p>
-              <p><a href="https://wa.me/919355522544" style="color: #25D366; font-weight: bold;">Chat on WhatsApp →</a></p>
+              <p><a href="https://wa.me/919255522544" style="color: #25D366; font-weight: bold;">Chat on WhatsApp →</a></p>
               <br/>
               <p>Best Regards,<br/><strong>GETWAY Technology</strong></p>
             </div>
