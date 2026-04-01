@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight, Maximize2, Download, Play, Pause } from "luc
 import { motion, AnimatePresence } from "framer-motion";
 import AnimatedSection from "@/components/AnimatedSection";
 
-const totalSlides = 10;
+const totalSlides = 9;
 
 const Presentation = () => {
   const [current, setCurrent] = useState(1);
