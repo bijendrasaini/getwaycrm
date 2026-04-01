@@ -39,10 +39,6 @@ const footerSections = [
       { label: "FAQ", path: "/faq" },
       { label: "Demo", path: "/demo" },
       { label: "Presentation", path: "/presentation" },
-      { label: "Blog", path: "#" },
-      { label: "Documentation", path: "#" },
-      { label: "API", path: "#" },
-      { label: "Help Center", path: "#" },
     ],
   },
 ];
@@ -83,9 +79,11 @@ const Footer = () => (
       </div>
       <div className="border-t border-[hsl(200,25%,10%)] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
         <p className="text-[hsl(200,20%,35%)] text-sm">© 2006–{new Date().getFullYear()} Getways Wellness & Technology. All rights reserved.</p>
-        <div className="flex items-center gap-6">
+        <div className="flex items-center gap-6 flex-wrap">
           <Link to="/privacy" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Privacy Policy</Link>
           <Link to="/terms" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Terms of Service</Link>
+          <Link to="/refund-policy" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Refund Policy</Link>
+          <Link to="/compliance-policy" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Compliance</Link>
           <Link to="/security" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Security</Link>
         </div>
       </div>

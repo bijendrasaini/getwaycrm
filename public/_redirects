@@ -1,5 +1,7 @@
+# Subdomain routing
 demo.getwaycrm.com/*        /demo              200
 partners.getwaycrm.com/*    /partners          200
 presentation.getwaycrm.com/* /presentation     200
 
+# SPA fallback
 /* /index.html 200

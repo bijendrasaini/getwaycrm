@@ -84,7 +84,7 @@ const Demo = () => {
                   Our team will contact you shortly.
                 </p>
                 <a
-                  href="https://wa.me/919355522544?text=Hello%20GETWAY%20Team,%20I%20am%20interested%20in%20GETWAY%20AI%20CRM%20Demo"
+                  href="https://wa.me/919255522544?text=Hello%20GETWAY%20Team,%20I%20am%20interested%20in%20GETWAY%20AI%20CRM%20Demo"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2 text-base"

@@ -62,9 +62,8 @@ const Contact = () => {
               </p>
               <div className="space-y-6">
                 {[
-                  { icon: Mail, label: "Email", value: "connect@getwaycrm.com" },
+                  { icon: Mail, label: "Email", value: "connect@getway.in" },
                   { icon: Phone, label: "Phone", value: "+91 92555-22544" },
-                  { icon: Phone, label: "Office", value: "+91 93555-22544" },
                 ].map((item) => (
                   <div key={item.label} className="flex items-center gap-4">
                     <div className="feature-icon-box"><item.icon size={20} className="text-teal-light" /></div>
