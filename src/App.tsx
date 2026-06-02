@@ -36,6 +36,10 @@ import SmsRcsMessaging from "./pages/SmsRcsMessaging";
 import VoiceBroadcasting from "./pages/VoiceBroadcasting";
 import EmailMarketing from "./pages/EmailMarketing";
 import IvrSystem from "./pages/IvrSystem";
+import Founder from "./pages/Founder";
+import ChannelPartner from "./pages/ChannelPartner";
+import SchoolErp from "./pages/SchoolErp";
+import Community from "./pages/Community";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -83,6 +87,18 @@ const AppLayout = () => {
         <Route path="/voice-broadcasting" element={<VoiceBroadcasting />} />
         <Route path="/email-marketing" element={<EmailMarketing />} />
         <Route path="/ivr-system" element={<IvrSystem />} />
+        <Route path="/founder" element={<Founder />} />
+        <Route path="/channelpartner" element={<ChannelPartner />} />
+        <Route path="/channel-partner" element={<ChannelPartner />} />
+        <Route path="/schoolerp" element={<SchoolErp />} />
+        <Route path="/school-erp" element={<SchoolErp />} />
+        <Route path="/community" element={<Community />} />
+        <Route path="/CRM" element={<AiCrm />} />
+        <Route path="/crm" element={<AiCrm />} />
+        <Route path="/aivoiceagent" element={<AiCallAutomation />} />
+        <Route path="/ai-voice-agent" element={<AiCallAutomation />} />
+        <Route path="/CPaaS" element={<Platform />} />
+        <Route path="/cpaas" element={<Platform />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       {!isLoginPage && <Footer />}
