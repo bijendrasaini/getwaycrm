@@ -142,7 +142,7 @@ const Index = () => {
       {/* Live AI Voice Demo */}
       <LiveAiVoiceDemoSection />
 
-      </section>
+
 
       {/* Motivational Tagline */}
       <section className="gradient-section-dark py-10 border-y border-teal/20">
