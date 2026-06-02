@@ -36,6 +36,10 @@ import SmsRcsMessaging from "./pages/SmsRcsMessaging";
 import VoiceBroadcasting from "./pages/VoiceBroadcasting";
 import EmailMarketing from "./pages/EmailMarketing";
 import IvrSystem from "./pages/IvrSystem";
+import Founder from "./pages/Founder";
+import ChannelPartner from "./pages/ChannelPartner";
+import SchoolErp from "./pages/SchoolErp";
+import Community from "./pages/Community";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
