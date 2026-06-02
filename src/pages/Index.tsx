@@ -103,35 +103,45 @@ const Index = () => {
               </span>
             </motion.div>
             <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="heading-xl mb-6">
-              <span className="gradient-text-white">Run Your Business on</span><br />
-              <span className="gradient-text">Intelligent Autopilot</span>
+              <span className="gradient-text-white">GETWAY AI PLATFORM</span>
             </motion.h1>
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="gradient-text text-2xl md:text-3xl font-semibold mb-6">
+              AI-Powered Business Automation
+            </motion.p>
             <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} className="text-[hsl(200,20%,55%)] text-lg md:text-xl mb-4 max-w-2xl mx-auto">
               AI CRM • CPaaS • IVR • RCS • AI Voice Agents • WhatsApp API • Workflow Automation
             </motion.p>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }} className="text-[hsl(200,20%,45%)] text-base md:text-lg mb-10 max-w-xl mx-auto">
+            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }} className="text-[hsl(200,20%,45%)] text-base md:text-lg mb-8 max-w-xl mx-auto">
               One unified platform to acquire, engage, convert, and retain customers at scale.
             </motion.p>
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} className="flex justify-center mb-8">
+              <BuiltForBharat centered />
+            </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.45 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link to="/demo" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold text-base inline-flex items-center gap-2">
                 Book Demo <ArrowRight size={18} />
               </Link>
+              <a href="https://wa.me/919255522544" target="_blank" rel="noopener noreferrer" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold text-base inline-flex items-center gap-2">
+                <MessageSquare size={18} /> Experience GETWAY AI
+              </a>
               <Link to="/platform" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold text-base">Explore Platform</Link>
-              <Link to="/partners" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold text-base">Become a Partner</Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* CRM Showcase Image */}
+      {/* Promotional Banner */}
       <section className="gradient-section-dark py-12">
-        <div className="container-wide">
+        <div className="container-wide max-w-5xl mx-auto">
           <AnimatedSection>
-            <div className="rounded-2xl overflow-hidden border border-[hsl(200,25%,14%)] shadow-2xl max-w-5xl mx-auto">
-              <img src={getwayShowcase} alt="GETWAY AI-Powered CRM Platform" className="w-full h-auto" />
-            </div>
+            <PromoBannerCard src={promoBanner.url} alt="GETWAY AI CRM Autopilot" />
           </AnimatedSection>
         </div>
+      </section>
+
+      {/* Live AI Voice Demo */}
+      <LiveAiVoiceDemoSection />
+
       </section>
 
       {/* Motivational Tagline */}
