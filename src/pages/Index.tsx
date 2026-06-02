@@ -12,8 +12,12 @@ import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
 import ComparisonSection from "@/components/ComparisonSection";
 import PlatformDiagram from "@/components/PlatformDiagram";
+import LiveAiVoiceDemoSection from "@/components/LiveAiVoiceDemoSection";
+import BuiltForBharat from "@/components/BuiltForBharat";
+import PromoBannerCard from "@/components/PromoBannerCard";
 import getwayShowcase from "@/assets/getway-crm-showcase.jpg";
 import getwayAllInOne from "@/assets/getway-all-in-one.jpg";
+import promoBanner from "@/assets/getway-crm-autopilot-banner.png.asset.json";
 
 const stats = [
   { number: "20,000+", label: "Businesses Served" },
