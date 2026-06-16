@@ -1,16 +1,16 @@
 import { Link } from "react-router-dom";
 import { ExternalLink } from "lucide-react";
-import getwayLogo from "@/assets/getway-logo.jpg";
+import BrandLogo from "@/components/BrandLogo";
 
 const footerSections = [
   {
     title: "Platform & Products",
     links: [
-      { label: "AI CRM Software", path: "/ai-crm" },
+      { label: "AI CRM Platform", path: "/ai-crm" },
       { label: "CPaaS Platform", path: "/platform" },
-      { label: "AI Voice Agents", path: "/ai-call-automation" },
-      { label: "AI Websites & Funnels", path: "/solutions" },
-      { label: "Pricing", path: "/pricing" },
+      { label: "AI Voice Agent", path: "/ai-call-automation" },
+      { label: "School ERP", path: "/schoolerp" },
+      { label: "Community & LMS", path: "/community" },
     ],
   },
   {
@@ -20,15 +20,15 @@ const footerSections = [
       { label: "SMS / RCS Messaging", path: "/sms-rcs-messaging" },
       { label: "Voice Broadcasting", path: "/voice-broadcasting" },
       { label: "Email Marketing", path: "/email-marketing" },
-      { label: "IVR & Click-to-Call", path: "/ivr-system" },
+      { label: "IVR System", path: "/ivr-system" },
     ],
   },
   {
     title: "Company",
     links: [
       { label: "About Us", path: "/about" },
-      { label: "Partners", path: "/partners" },
-      { label: "Careers", path: "/career" },
+      { label: "Founder", path: "/founder" },
+      { label: "Channel Partner", path: "/channelpartner" },
       { label: "Contact", path: "/contact" },
       { label: "Presentation", path: "/presentation" },
     ],
@@ -48,29 +48,28 @@ const footerSections = [
 const Footer = () => (
   <footer className="footer-dark section-padding">
     <div className="container-wide">
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mb-16">
+      <div className="mb-16 grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-6">
         <div className="col-span-2 md:col-span-3 lg:col-span-2">
-          <Link to="/" className="inline-block mb-4">
-            <img src={getwayLogo} alt="GETWAY" className="h-10 w-auto object-contain brightness-110" />
+          <Link to="/" className="mb-4 inline-block">
+            <BrandLogo className="h-11 w-auto object-contain" />
           </Link>
-          <p className="text-[hsl(200,20%,45%)] text-sm leading-relaxed max-w-xs">
-            AI-Powered Business Automation Platform. Unify your CRM, communications, and workflows into one intelligent system.
+          <p className="max-w-xs text-sm leading-relaxed text-[hsl(200,20%,45%)]">
+            AI-powered business automation for lead management, communication, workflow orchestration, and growth.
           </p>
-          <p className="text-[hsl(200,20%,35%)] text-xs mt-4">Digital Way to Grow</p>
+          <p className="mt-4 text-xs text-[hsl(200,20%,35%)]">Digital Way to Grow</p>
           <div className="mt-4 flex flex-col gap-2">
-            <a href="https://login.getwaycrm.com" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 text-teal-light text-sm font-medium hover:underline">
+            <a href="https://login.getwaycrm.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 text-sm font-medium text-teal-light hover:underline">
               Client Login <ExternalLink size={13} />
             </a>
           </div>
         </div>
         {footerSections.map((section) => (
           <div key={section.title}>
-            <h4 className="font-semibold text-primary-foreground text-sm mb-4">{section.title}</h4>
+            <h4 className="mb-4 text-sm font-semibold text-primary-foreground">{section.title}</h4>
             <ul className="space-y-2.5">
               {section.links.map((link) => (
                 <li key={link.label}>
-                  <Link to={link.path} className="text-[hsl(200,20%,45%)] hover:text-primary-foreground text-sm transition-colors">
+                  <Link to={link.path} className="text-sm text-[hsl(200,20%,45%)] transition-colors hover:text-primary-foreground">
                     {link.label}
                   </Link>
                 </li>
@@ -79,14 +78,14 @@ const Footer = () => (
           </div>
         ))}
       </div>
-      <div className="border-t border-[hsl(200,25%,10%)] pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-[hsl(200,20%,35%)] text-sm">© 2006–{new Date().getFullYear()} Getways Wellness & Technology. All rights reserved.</p>
-        <div className="flex items-center gap-6 flex-wrap">
-          <Link to="/privacy" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Privacy Policy</Link>
-          <Link to="/terms" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Terms of Service</Link>
-          <Link to="/refund-policy" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Refund Policy</Link>
-          <Link to="/compliance-policy" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Compliance</Link>
-          <Link to="/security" className="text-[hsl(200,20%,35%)] hover:text-primary-foreground text-sm transition-colors">Security</Link>
+      <div className="flex flex-col items-center justify-between gap-4 border-t border-[hsl(200,25%,10%)] pt-8 md:flex-row">
+        <p className="text-sm text-[hsl(200,20%,35%)]">© 2006–{new Date().getFullYear()} GETWAY Technology. All rights reserved.</p>
+        <div className="flex flex-wrap items-center gap-6">
+          <Link to="/privacy" className="text-sm text-[hsl(200,20%,35%)] transition-colors hover:text-primary-foreground">Privacy Policy</Link>
+          <Link to="/terms" className="text-sm text-[hsl(200,20%,35%)] transition-colors hover:text-primary-foreground">Terms of Service</Link>
+          <Link to="/refund-policy" className="text-sm text-[hsl(200,20%,35%)] transition-colors hover:text-primary-foreground">Refund Policy</Link>
+          <Link to="/compliance-policy" className="text-sm text-[hsl(200,20%,35%)] transition-colors hover:text-primary-foreground">Compliance</Link>
+          <Link to="/security" className="text-sm text-[hsl(200,20%,35%)] transition-colors hover:text-primary-foreground">Security</Link>
         </div>
       </div>
     </div>
