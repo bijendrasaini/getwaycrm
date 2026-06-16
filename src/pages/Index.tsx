@@ -1,23 +1,11 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  Zap, Users, TrendingUp, Shield, Bot, Phone, Mail, BarChart3,
-  Workflow, Globe, MessageSquare, Calendar, ShoppingCart, Database,
-  Headphones, GraduationCap, Building2, Stethoscope, DollarSign,
-  Briefcase, UserCheck, Layers, Lock, Server, Code, Rocket,
-  Target, PieChart, Megaphone, Video, CreditCard, Smartphone,
-  Share2, Brain, Sparkles, ArrowRight, CheckCircle2, Star, Quote
-} from "lucide-react";
+import { ArrowRight, MessageSquare } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
-import SectionHeader from "@/components/SectionHeader";
-import ComparisonSection from "@/components/ComparisonSection";
-import PlatformDiagram from "@/components/PlatformDiagram";
 import LiveAiVoiceDemoSection from "@/components/LiveAiVoiceDemoSection";
 import BuiltForBharat from "@/components/BuiltForBharat";
 import PromoBannerCard from "@/components/PromoBannerCard";
-import getwayShowcase from "@/assets/getway-crm-showcase.jpg";
-import getwayAllInOne from "@/assets/getway-all-in-one.jpg";
-import promoBanner from "@/assets/getway-crm-autopilot-banner.png.asset.json";
+import promoBanner from "@/assets/getway-ai-voice-banner-primary.png.asset.json";
 
 const stats = [
   { number: "20,000+", label: "Businesses Served" },
@@ -26,389 +14,138 @@ const stats = [
   { number: "20+", label: "Years of Innovation" },
 ];
 
-const problems = [
-  { icon: Layers, title: "Disconnected Tools", desc: "Juggling 10+ platforms that don't communicate, creating data silos and operational drag." },
-  { icon: Target, title: "Missed Follow-ups", desc: "Leads slip through the cracks when there's no automated nurture system in place." },
-  { icon: Workflow, title: "Manual Workflows", desc: "Hours wasted on repetitive tasks that intelligent automation can handle instantly." },
-  { icon: Database, title: "Scattered Data", desc: "Customer data spread across tools, making a unified view impossible." },
-];
-
-const crmFeatures = [
-  { icon: BarChart3, label: "Lead Management" },
-  { icon: MessageSquare, label: "WhatsApp & SMS Automation" },
-  { icon: Bot, label: "AI Voice Calling" },
-  { icon: TrendingUp, label: "Sales Pipeline Automation" },
-  { icon: Workflow, label: "Workflow Automation" },
-  { icon: Megaphone, label: "Marketing Automation" },
-  { icon: Globe, label: "Funnels & Websites" },
-  { icon: GraduationCap, label: "LMS Platform" },
-  { icon: CreditCard, label: "Payment & Billing" },
-  { icon: Smartphone, label: "API Integrations" },
-];
-
-const platformPillars = [
-  { icon: Brain, title: "AI CRM Engine", desc: "Intelligent customer relationship management with predictive analytics and automated workflows." },
-  { icon: Phone, title: "CPaaS Infrastructure", desc: "Enterprise communication — SMS, RCS, WhatsApp, Voice, and Email through a unified API." },
-  { icon: Bot, title: "AI Voice Agents", desc: "Conversational AI voice agents for sales, support, and collections at enterprise scale." },
-  { icon: Workflow, title: "Workflow Automation", desc: "Visual workflow builder with conditional logic, triggers, and multi-step automations." },
-  { icon: Megaphone, title: "Marketing Automation", desc: "Omnichannel campaign orchestration with AI-powered segmentation and personalization." },
-  { icon: PieChart, title: "Revenue Intelligence", desc: "AI-powered analytics with pipeline forecasting, attribution, and performance insights." },
-  { icon: Server, title: "Cloud Infrastructure", desc: "Enterprise-grade cloud with 99.9% uptime, global CDN, and auto-scaling." },
-];
-
-const industries = [
-  { icon: GraduationCap, title: "Education", desc: "Enrollment, communication, and learning management automation." },
-  { icon: Stethoscope, title: "Healthcare", desc: "Patient engagement, scheduling, and compliance workflows." },
-  { icon: DollarSign, title: "Finance", desc: "Client onboarding, KYC, and regulatory communications." },
-  { icon: ShoppingCart, title: "E-Commerce", desc: "Customer journeys, cart recovery, and campaign automation." },
-  { icon: Building2, title: "Enterprise", desc: "End-to-end business process automation at scale." },
-  { icon: Briefcase, title: "Coaches & Trainers", desc: "Course delivery, client management, and community tools." },
-];
-
-const impacts = [
-  { value: "3X", label: "Faster Lead Response" },
-  { value: "50%", label: "Higher Conversion" },
-  { value: "70%", label: "Less Manual Work" },
-  { value: "2X", label: "Customer Retention" },
-];
-
-const howItWorks = [
-  { step: "01", title: "Sign Up", desc: "Create your account and set up your workspace in minutes." },
-  { step: "02", title: "Connect", desc: "Integrate your channels — WhatsApp, SMS, voice, email, and more." },
-  { step: "03", title: "Automate", desc: "Build workflows, set triggers, and let AI handle the repetitive tasks." },
-  { step: "04", title: "Scale", desc: "Grow your business with data-driven insights and intelligent automation." },
-];
-
-const testimonials = [
-  { name: "Rajesh Kumar", role: "CEO, TechVista Solutions", quote: "GETWAY transformed our sales process. We've seen a 3X increase in lead conversion since switching to their AI CRM platform.", stars: 5 },
-  { name: "Priya Sharma", role: "Director, EduGrowth Academy", quote: "The School ERP and communication automation saved us 20+ hours per week. Our parent engagement has never been better.", stars: 5 },
-  { name: "Amit Patel", role: "Founder, ScaleUp Marketing", quote: "As a white-label partner, GETWAY gave us a complete SaaS product to offer our clients. Best business decision we made.", stars: 5 },
+const platformLabels = [
+  "AI CRM",
+  "AI Voice Calling Agent",
+  "CPaaS",
+  "IVR",
+  "WhatsApp API",
+  "Workflow Automation",
 ];
 
 const Index = () => {
   return (
     <div className="overflow-hidden">
-      {/* Hero */}
-      <section className="gradient-hero min-h-screen flex items-center pt-20 relative">
+      <section className="gradient-hero relative flex min-h-screen items-center pt-20">
         <div className="absolute inset-0 grid-pattern opacity-40" />
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="gradient-orb gradient-orb-teal w-[500px] h-[500px] absolute top-1/4 left-1/4" />
-          <div className="gradient-orb gradient-orb-cyan w-[400px] h-[400px] absolute bottom-1/4 right-1/4" style={{ animationDelay: "3s" }} />
-        </div>
-        <div className="container-wide relative z-10 py-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-              <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-8 bg-teal/10 text-teal-light border border-teal/20">
-                AI-Powered Business Automation Platform
-              </span>
+        <div className="container-wide relative z-10 py-16 md:py-20">
+          <div className="mx-auto flex max-w-4xl flex-col items-center text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5 }}
+              className="mb-6 flex flex-wrap items-center justify-center gap-x-3 gap-y-2 text-xs font-medium uppercase tracking-[0.08em] text-[hsl(200,20%,62%)] md:text-sm"
+            >
+              {platformLabels.map((label, index) => (
+                <span key={label} className="inline-flex items-center gap-3">
+                  <span>{label}</span>
+                  {index < platformLabels.length - 1 && <span className="text-teal-light">|</span>}
+                </span>
+              ))}
             </motion.div>
-            <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="heading-xl mb-6">
+
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="heading-xl mb-4"
+            >
               <span className="gradient-text-white">GETWAY AI PLATFORM</span>
             </motion.h1>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.2 }} className="gradient-text text-2xl md:text-3xl font-semibold mb-6">
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="gradient-text mb-5 text-2xl font-semibold md:text-3xl"
+            >
               AI-Powered Business Automation
             </motion.p>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.25 }} className="text-[hsl(200,20%,55%)] text-lg md:text-xl mb-4 max-w-2xl mx-auto">
-              AI CRM • CPaaS • IVR • RCS • AI Voice Agents • WhatsApp API • Workflow Automation
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="mb-8 max-w-3xl text-base leading-relaxed text-[hsl(200,20%,55%)] md:text-lg"
+            >
+              One unified platform to automate communication, manage leads, streamline workflows, and scale business growth with AI.
             </motion.p>
-            <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.35 }} className="text-[hsl(200,20%,45%)] text-base md:text-lg mb-8 max-w-xl mx-auto">
-              One unified platform to acquire, engage, convert, and retain customers at scale.
-            </motion.p>
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5, delay: 0.4 }} className="flex justify-center mb-8">
+
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.45, delay: 0.35 }}
+              className="mb-8"
+            >
               <BuiltForBharat centered />
             </motion.div>
-            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.45 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/demo" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold text-base inline-flex items-center gap-2">
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              className="flex w-full flex-col items-center justify-center gap-4 sm:flex-row"
+            >
+              <Link to="/demo" className="glow-button inline-flex min-w-[180px] items-center justify-center gap-2 rounded-xl px-8 py-3.5 text-base font-semibold text-primary-foreground">
                 Book Demo <ArrowRight size={18} />
               </Link>
-              <a href="https://wa.me/919255522544" target="_blank" rel="noopener noreferrer" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold text-base inline-flex items-center gap-2">
+              <a
+                href="https://wa.me/919255522544"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="outline-button-hero inline-flex min-w-[220px] items-center justify-center gap-2 rounded-xl px-8 py-3.5 text-base font-semibold"
+              >
                 <MessageSquare size={18} /> Experience GETWAY AI
               </a>
-              <Link to="/platform" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold text-base">Explore Platform</Link>
+              <Link to="/platform" className="outline-button-hero inline-flex min-w-[180px] items-center justify-center rounded-xl px-8 py-3.5 text-base font-semibold">
+                Explore Platform
+              </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Promotional Banner */}
-      <section className="gradient-section-dark py-12">
-        <div className="container-wide max-w-5xl mx-auto">
+      <section className="gradient-section-dark py-12 md:py-14">
+        <div className="container-wide mx-auto max-w-6xl">
           <AnimatedSection>
-            <PromoBannerCard src={promoBanner.url} alt="GETWAY AI CRM Autopilot" />
+            <PromoBannerCard src={promoBanner.url} alt="GETWAY AI Voice Calling Agent banner" />
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Live AI Voice Demo */}
       <LiveAiVoiceDemoSection />
 
-
-
-      {/* Motivational Tagline */}
-      <section className="gradient-section-dark py-10 border-y border-teal/20">
-        <div className="container-wide text-center">
-          <AnimatedSection>
-            <p className="text-2xl md:text-3xl font-bold font-display gradient-text leading-relaxed">
-              Technology को काम करने दो...<br />
-              आप सिर्फ Growth पर Focus करो 🚀
-            </p>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Trust Stats */}
       <section className="gradient-section-dark py-16 border-y border-[hsl(200,25%,10%)]">
         <div className="container-wide">
-          <AnimatedSection className="text-center mb-10">
-            <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 bg-teal/10 text-teal-light border border-teal/20">Trusted Worldwide</span>
-            <h2 className="heading-md gradient-text-white">Trusted by Businesses Worldwide</h2>
+          <AnimatedSection className="mb-10 text-center">
+            <h2 className="heading-md gradient-text-white">Trusted by Growing Businesses</h2>
           </AnimatedSection>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((s, i) => (
-              <AnimatedSection key={s.label} delay={i * 0.1} className="text-center">
-                <div className="stat-number gradient-text mb-2">{s.number}</div>
-                <div className="text-[hsl(200,20%,50%)] text-sm font-medium">{s.label}</div>
+          <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
+            {stats.map((stat, index) => (
+              <AnimatedSection key={stat.label} delay={index * 0.08} className="text-center">
+                <div className="stat-number gradient-text mb-2">{stat.number}</div>
+                <div className="text-sm font-medium text-[hsl(200,20%,50%)]">{stat.label}</div>
               </AnimatedSection>
             ))}
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="gradient-section-alt section-padding">
-        <div className="container-wide">
-          <SectionHeader badge="How It Works" title="Get Started in 4 Simple Steps" description="From sign-up to scale — GETWAY makes business automation effortless." />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {howItWorks.map((step, i) => (
-              <AnimatedSection key={step.step} delay={i * 0.1}>
-                <div className="glass-card-hover rounded-2xl p-8 h-full text-center relative">
-                  <div className="text-5xl font-bold font-display gradient-text mb-4 opacity-40">{step.step}</div>
-                  <h3 className="font-display font-semibold text-primary-foreground text-lg mb-2">{step.title}</h3>
-                  <p className="text-[hsl(200,20%,50%)] text-sm leading-relaxed">{step.desc}</p>
-                  {i < howItWorks.length - 1 && (
-                    <div className="hidden lg:block absolute top-1/2 -right-3 text-[hsl(200,20%,30%)]">
-                      <ArrowRight size={20} />
-                    </div>
-                  )}
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Problem */}
-      <section className="gradient-section-dark section-padding">
-        <div className="container-wide">
-          <SectionHeader badge="The Problem" title="Your Growth Stack is Broken" description="Most businesses run on disconnected tools that create friction, waste time, and lose revenue." />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {problems.map((p, i) => (
-              <AnimatedSection key={p.title} delay={i * 0.1}>
-                <div className="glass-card-hover rounded-2xl p-6 h-full">
-                  <div className="feature-icon-box mb-4"><p.icon size={22} className="text-teal-light" /></div>
-                  <h3 className="font-display font-semibold text-primary-foreground mb-2">{p.title}</h3>
-                  <p className="text-[hsl(200,20%,50%)] text-sm leading-relaxed">{p.desc}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Flagship CRM */}
-      <section className="gradient-section-alt section-padding">
-        <div className="container-wide">
-          <SectionHeader badge="Flagship Product" title="GETWAY AI-Powered CRM" description="Your central growth operating system. Manage leads, automate outreach, close deals, and scale revenue — all powered by AI." />
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
-            {crmFeatures.map((f, i) => (
-              <AnimatedSection key={f.label} delay={i * 0.04}>
-                <div className="glass-card-hover rounded-2xl p-6 h-full text-center flex flex-col items-center gap-4">
-                  <div className="feature-icon-box"><f.icon size={22} className="text-teal-light" /></div>
-                  <span className="text-[hsl(200,20%,70%)] text-sm font-medium leading-tight">{f.label}</span>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-          <AnimatedSection className="text-center mt-12">
-            <Link to="/ai-crm" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
-              Explore AI CRM <ArrowRight size={18} />
-            </Link>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* AI Voice Agents Highlight */}
-      <section className="gradient-section-dark section-padding">
-        <div className="container-wide">
-          <div className="max-w-5xl mx-auto">
-            <AnimatedSection>
-              <div className="glass-card-hover rounded-2xl p-10 md:p-14 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-teal/5 rounded-full blur-[100px]" />
-                <div className="relative z-10 flex flex-col md:flex-row items-center gap-10">
-                  <div className="flex-1">
-                    <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold tracking-wider uppercase mb-4 bg-teal/10 text-teal-light border border-teal/20">Featured</span>
-                    <h2 className="heading-md gradient-text-white mb-4">AI Voice Agents</h2>
-                    <p className="text-[hsl(200,20%,55%)] text-sm leading-relaxed mb-6">
-                      Deploy intelligent AI voice agents that handle outbound sales calls, inbound support, appointment booking, and lead qualification — 24/7, at enterprise scale. No human intervention needed.
-                    </p>
-                    <ul className="space-y-2 mb-6">
-                      {["Automated outbound sales calling", "24/7 inbound customer support", "AI-powered lead qualification", "CRM-integrated call logging"].map((item) => (
-                        <li key={item} className="text-[hsl(200,20%,65%)] text-sm flex items-center gap-2">
-                          <CheckCircle2 size={14} className="text-teal shrink-0" /> {item}
-                        </li>
-                      ))}
-                    </ul>
-                    <Link to="/platform" className="glow-button px-6 py-3 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2 text-sm">
-                      Learn More <ArrowRight size={16} />
-                    </Link>
-                  </div>
-                  <div className="w-48 h-48 rounded-2xl bg-gradient-to-br from-teal/20 to-cyan/10 border border-teal/20 flex items-center justify-center shrink-0">
-                    <Bot size={72} className="text-teal-light" />
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* All-in-One Image Section */}
-      <section className="gradient-section-alt section-padding">
-        <div className="container-wide">
-          <SectionHeader badge="All-in-One" title="Run Your Entire Business from One Intelligent Platform" description="All-in-One AI Business Automation Platform" />
-          <AnimatedSection>
-            <div className="rounded-2xl overflow-hidden border border-[hsl(200,25%,14%)] shadow-2xl max-w-5xl mx-auto">
-              <img src={getwayAllInOne} alt="GETWAY All-in-One AI Business Automation Platform" className="w-full h-auto" />
-            </div>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Platform Diagram */}
-      <PlatformDiagram />
-
-      {/* Comparison Section */}
-      <ComparisonSection />
-
-      {/* Platform Infrastructure */}
-      <section className="gradient-section-alt section-padding">
-        <div className="container-wide">
-          <SectionHeader badge="Platform" title="One Platform. Total Intelligence." description="GETWAY unifies CRM, communication, AI automation, and analytics into a single intelligent platform." />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {platformPillars.map((p, i) => (
-              <AnimatedSection key={p.title} delay={i * 0.08}>
-                <div className="glass-card-hover rounded-2xl p-8 h-full">
-                  <div className="feature-icon-box mb-5"><p.icon size={24} className="text-teal-light" /></div>
-                  <h3 className="font-display font-semibold text-primary-foreground text-lg mb-3">{p.title}</h3>
-                  <p className="text-[hsl(200,20%,50%)] text-sm leading-relaxed">{p.desc}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="gradient-section-dark section-padding">
-        <div className="container-wide">
-          <SectionHeader badge="Testimonials" title="What Our Customers Say" description="Hear from businesses that transformed their operations with GETWAY." />
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.map((t, i) => (
-              <AnimatedSection key={t.name} delay={i * 0.1}>
-                <div className="glass-card-hover rounded-2xl p-8 h-full flex flex-col">
-                  <div className="flex items-center gap-1 mb-4">
-                    {Array.from({ length: t.stars }).map((_, j) => (
-                      <Star key={j} size={16} className="text-yellow-500 fill-yellow-500" />
-                    ))}
-                  </div>
-                  <p className="text-[hsl(200,20%,65%)] text-sm leading-relaxed flex-1 mb-6 italic">"{t.quote}"</p>
-                  <div>
-                    <div className="text-primary-foreground text-sm font-semibold">{t.name}</div>
-                    <div className="text-[hsl(200,20%,45%)] text-xs">{t.role}</div>
-                  </div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Industries */}
-      <section className="gradient-section-alt section-padding">
-        <div className="container-wide">
-          <SectionHeader badge="Industries" title="Built for Every Industry" description="Purpose-built automation for the industries that need it most." />
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {industries.map((ind, i) => (
-              <AnimatedSection key={ind.title} delay={i * 0.08}>
-                <div className="glass-card-hover rounded-2xl p-8 h-full">
-                  <div className="feature-icon-box mb-5"><ind.icon size={24} className="text-teal-light" /></div>
-                  <h3 className="font-display font-semibold text-primary-foreground text-lg mb-2">{ind.title}</h3>
-                  <p className="text-[hsl(200,20%,50%)] text-sm leading-relaxed">{ind.desc}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Business Impact */}
-      <section className="gradient-section-dark section-padding">
-        <div className="container-wide">
-          <SectionHeader badge="Impact" title="Measurable Business Impact" description="GETWAY customers see transformative results across their entire revenue operation." />
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {impacts.map((imp, i) => (
-              <AnimatedSection key={imp.label} delay={i * 0.1}>
-                <div className="glass-card rounded-2xl p-8 text-center">
-                  <div className="stat-number gradient-text mb-3">{imp.value}</div>
-                  <div className="text-[hsl(200,20%,55%)] text-sm font-medium">{imp.label}</div>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Security */}
-      <section className="gradient-section-alt section-padding">
-        <div className="container-wide">
-          <SectionHeader badge="Security" title="Enterprise-Grade Security" description="Your data is protected by industry-leading security standards and infrastructure." />
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { icon: Shield, title: "Secure Cloud", desc: "Enterprise-grade cloud infrastructure with compliance standards." },
-              { icon: Lock, title: "Data Encryption", desc: "End-to-end encryption for data at rest and in transit." },
-              { icon: UserCheck, title: "Role-Based Access", desc: "Granular permissions and role-based access control." },
-              { icon: Server, title: "High Availability", desc: "99.9% uptime SLA with global redundancy and failover." },
-            ].map((s, i) => (
-              <AnimatedSection key={s.title} delay={i * 0.1}>
-                <div className="glass-card-hover rounded-2xl p-6 h-full text-center">
-                  <div className="feature-icon-box mx-auto mb-4"><s.icon size={22} className="text-teal-light" /></div>
-                  <h3 className="font-display font-semibold text-primary-foreground mb-2">{s.title}</h3>
-                  <p className="text-[hsl(200,20%,50%)] text-sm">{s.desc}</p>
-                </div>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA */}
-      <section className="gradient-hero section-padding relative">
+      <section className="gradient-hero relative section-padding">
         <div className="absolute inset-0 grid-pattern opacity-30" />
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="gradient-orb gradient-orb-teal w-[500px] h-[500px] absolute top-1/3 right-1/4" />
-        </div>
         <div className="container-wide relative z-10 text-center">
           <AnimatedSection>
-            <h2 className="heading-lg gradient-text-white mb-6">Build Your Intelligent<br />Growth Infrastructure</h2>
-            <p className="text-[hsl(200,20%,50%)] text-body-lg max-w-2xl mx-auto mb-10">
-              Join 20,000+ businesses running on GETWAY's AI-powered automation platform.
+            <h2 className="heading-lg gradient-text-white mb-6">Build Your Next Growth System with GETWAY AI</h2>
+            <p className="text-body-lg mx-auto mb-10 max-w-2xl text-[hsl(200,20%,50%)]">
+              Launch AI-driven communication, workflow automation, and lead management from one premium platform.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/demo" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
+            <div className="flex flex-col items-center justify-center gap-4 sm:flex-row">
+              <Link to="/demo" className="glow-button inline-flex items-center gap-2 rounded-xl px-8 py-3.5 font-semibold text-primary-foreground">
                 Book Demo <ArrowRight size={18} />
               </Link>
-              <Link to="/partners" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold">Become a Partner</Link>
-              <Link to="/contact" className="outline-button-hero px-8 py-3.5 rounded-xl font-semibold">Contact Sales</Link>
+              <Link to="/platform" className="outline-button-hero rounded-xl px-8 py-3.5 font-semibold">
+                Explore Platform
+              </Link>
             </div>
           </AnimatedSection>
         </div>

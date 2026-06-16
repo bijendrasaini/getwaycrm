@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import {
   BarChart3, Users, MessageSquare, Phone, Bot, Headphones, Zap, TrendingUp,
   UserCheck, Globe, Database, Share2, Megaphone, Calendar, Video,
-  GraduationCap, CreditCard, Smartphone, ArrowRight, CheckCircle2
+  GraduationCap, CreditCard, Smartphone, ArrowRight
 } from "lucide-react";
 import AnimatedSection from "@/components/AnimatedSection";
 import SectionHeader from "@/components/SectionHeader";
@@ -12,51 +12,35 @@ const features = [
   { icon: Users, title: "Unlimited Lead Management", desc: "Capture, score, and nurture unlimited leads with automated segmentation." },
   { icon: MessageSquare, title: "Omnichannel Marketing", desc: "SMS, RCS, WhatsApp, and Email campaigns from a single interface." },
   { icon: Phone, title: "Voice Broadcasting", desc: "Automated voice campaigns and broadcasting to reach thousands instantly." },
-  { icon: Bot, title: "AI Voice Agents", desc: "Deploy AI-powered voice agents for sales calls, support, and collections." },
+  { icon: Bot, title: "AI Voice Agent", desc: "Deploy AI-powered voice calling for sales, support, and collections." },
   { icon: Headphones, title: "IVR & Call Routing", desc: "Intelligent call routing with multi-level IVR and skill-based distribution." },
   { icon: Zap, title: "Auto Follow-ups", desc: "Never miss a lead with automated multi-channel follow-up sequences." },
   { icon: TrendingUp, title: "Sales Pipeline", desc: "Visual pipeline management with AI-powered deal scoring and forecasting." },
   { icon: UserCheck, title: "Performance Tracking", desc: "Real-time staff performance analytics with KPI tracking and leaderboards." },
-  { icon: Globe, title: "AI Websites & Funnels", desc: "Build high-converting websites, landing pages, and sales funnels with AI." },
+  { icon: Globe, title: "Websites & Funnels", desc: "Build high-converting websites, landing pages, and sales funnels." },
   { icon: Database, title: "Cloud Vault", desc: "Secure cloud storage for documents, contracts, and business files." },
   { icon: Share2, title: "Social Automation", desc: "Schedule, publish, and analyze social media content across platforms." },
-  { icon: Megaphone, title: "AI Ad Launcher", desc: "Create and optimize ad campaigns with AI-powered targeting and budgeting." },
+  { icon: Megaphone, title: "Ad Launcher", desc: "Create and optimize ad campaigns with AI-powered targeting and budgeting." },
   { icon: Calendar, title: "Appointment Booking", desc: "Automated scheduling with calendar sync, reminders, and no-show prevention." },
   { icon: Video, title: "Events & Webinars", desc: "Host, manage, and automate event marketing and webinar funnels." },
-  { icon: GraduationCap, title: "LMS & Courses", desc: "Create and sell courses with built-in learning management system." },
+  { icon: GraduationCap, title: "LMS & Courses", desc: "Create and sell courses with built-in learning management tools." },
   { icon: CreditCard, title: "Payments & Billing", desc: "Integrated invoicing, payment processing, and subscription management." },
-  { icon: Smartphone, title: "API & Mobile App", desc: "RESTful APIs and native mobile app for managing your business on the go." },
-];
-
-const benefits = [
-  "Eliminate 10+ disconnected tools",
-  "3X faster lead response time",
-  "50% higher conversion rates",
-  "70% reduction in manual work",
-  "Predictable revenue growth",
-  "360° customer visibility",
+  { icon: Smartphone, title: "API & Mobile App", desc: "APIs and mobile access for managing your business on the go." },
 ];
 
 const AiCrm = () => (
   <div className="overflow-hidden">
-    <section className="gradient-hero pt-32 pb-20 relative">
+    <section className="gradient-hero relative pb-20 pt-32">
       <div className="absolute inset-0 grid-pattern opacity-30" />
-      <div className="container-wide text-center relative z-10">
+      <div className="container-wide relative z-10 text-center">
         <AnimatedSection>
-          <span className="inline-block px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase mb-6 bg-teal/10 text-teal-light border border-teal/20">Flagship Product</span>
-          <h1 className="heading-xl gradient-text-white mb-6">GETWAY AI-Powered CRM</h1>
-          <p className="text-[hsl(200,20%,55%)] text-body-lg max-w-2xl mx-auto mb-8">
-            Your central growth operating system. Manage every customer interaction, automate every workflow, and scale revenue with AI.
+          <span className="mb-6 inline-block rounded-full border border-teal/20 bg-teal/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-teal-light">AI CRM Platform</span>
+          <h1 className="heading-xl gradient-text-white mb-6">GETWAY AI CRM Platform</h1>
+          <p className="mx-auto mb-8 max-w-2xl text-body-lg text-[hsl(200,20%,55%)]">
+            Manage leads, automate communication, streamline workflows, and grow revenue from one unified AI-powered CRM system.
           </p>
-          <div className="flex flex-wrap justify-center gap-3 mb-10">
-            {benefits.map((b) => (
-              <span key={b} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-medium bg-teal/10 text-teal-light border border-teal/20">
-                <CheckCircle2 size={14} /> {b}
-              </span>
-            ))}
-          </div>
-          <Link to="/contact" className="glow-button px-8 py-3.5 rounded-xl text-primary-foreground font-semibold inline-flex items-center gap-2">
-            Request Demo <ArrowRight size={18} />
+          <Link to="/demo" className="glow-button inline-flex items-center gap-2 rounded-xl px-8 py-3.5 font-semibold text-primary-foreground">
+            Book Demo <ArrowRight size={18} />
           </Link>
         </AnimatedSection>
       </div>
@@ -64,14 +48,14 @@ const AiCrm = () => (
 
     <section className="gradient-section-dark section-padding">
       <div className="container-wide">
-        <SectionHeader badge="Features" title="Everything You Need to Grow" description="18 powerful modules working together as your unified growth operating system." />
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {features.map((f, i) => (
-            <AnimatedSection key={f.title} delay={i * 0.04}>
-              <div className="glass-card-hover rounded-2xl p-6 h-full">
-                <div className="feature-icon-box mb-4"><f.icon size={22} className="text-teal-light" /></div>
-                <h3 className="font-display font-semibold text-primary-foreground mb-2">{f.title}</h3>
-                <p className="text-[hsl(200,20%,50%)] text-sm leading-relaxed">{f.desc}</p>
+        <SectionHeader badge="Features" title="Everything You Need to Grow" description="Powerful modules working together as one business automation platform." />
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {features.map((feature, index) => (
+            <AnimatedSection key={feature.title} delay={index * 0.04}>
+              <div className="glass-card-hover h-full rounded-2xl p-6">
+                <div className="feature-icon-box mb-4"><feature.icon size={22} className="text-teal-light" /></div>
+                <h3 className="mb-2 font-display font-semibold text-primary-foreground">{feature.title}</h3>
+                <p className="text-sm leading-relaxed text-[hsl(200,20%,50%)]">{feature.desc}</p>
               </div>
             </AnimatedSection>
           ))}

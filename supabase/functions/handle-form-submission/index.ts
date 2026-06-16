@@ -25,7 +25,6 @@ serve(async (req) => {
     const interestArea = (body.interestArea || "").trim();
     const phone = (body.phone || "").trim();
 
-    // 1. Send CRM webhook
     try {
       await fetch("https://www.getwaycrm.com/api/leads/create", {
         method: "POST",
@@ -36,7 +35,6 @@ serve(async (req) => {
       console.error("CRM webhook error:", e);
     }
 
-    // 2. Log admin alert
     try {
       const alertMsg = `New Lead Received\n\nName: ${name}\nMobile: ${mobile || phone}\nEmail: ${email}\nCity: ${city || state || "N/A"}\nSource: ${source}`;
       console.log("Admin alert:", alertMsg);
@@ -44,12 +42,10 @@ serve(async (req) => {
       console.error("Alert error:", e);
     }
 
-    // 3. Send notification emails
     const LOVABLE_API_KEY = Deno.env.get("LOVABLE_API_KEY");
     const SUPABASE_URL = Deno.env.get("SUPABASE_URL");
 
     if (LOVABLE_API_KEY && SUPABASE_URL) {
-      // Admin notification
       try {
         const adminEmailBody = `
           <h2>New Lead from GETWAY Website</h2>
@@ -65,8 +61,7 @@ serve(async (req) => {
           <p><strong>Message:</strong> ${message || "N/A"}</p>
         `;
 
-        // Send to both admin emails
-        const adminEmails = ["ceo@getwaygroup.com", "getwayconnect@gmail.com"];
+        const adminEmails = ["ceo@getwaygroup.com", "connect@getway.in"];
         for (const adminEmail of adminEmails) {
           await fetch(`${SUPABASE_URL}/functions/v1/send-transactional-email`, {
             method: "POST",
@@ -85,17 +80,15 @@ serve(async (req) => {
         console.error("Admin email error:", e);
       }
 
-      // Auto-reply to user
       if (email) {
         try {
           const userEmailBody = `
             <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
               <h2 style="color: #0d9488;">Thank you for contacting GETWAY</h2>
               <p>Hello${name ? ` ${name}` : ""},</p>
-              <p>Thank you for your interest in GETWAY AI CRM.</p>
-              <p>Our team has received your request and will contact you shortly.</p>
+              <p>Thank you! Our team has received your request and will contact you shortly.</p>
               <p>For quick assistance, connect with us on WhatsApp:</p>
-              <p><a href="https://wa.me/919255522544" style="color: #25D366; font-weight: bold;">Chat on WhatsApp →</a></p>
+              <p><a href="https://wa.me/919255522544" style="color: #25D366; font-weight: bold;">Experience GETWAY AI →</a></p>
               <br/>
               <p>Best Regards,<br/><strong>GETWAY Technology</strong><br/>connect@getway.in | +91 92555-22544</p>
             </div>
@@ -119,7 +112,7 @@ serve(async (req) => {
       }
     }
 
-    return new Response(JSON.stringify({ success: true }), {
+    return new Response(JSON.stringify({ success: true, message: "Thank you! Our team has received your request and will contact you shortly." }), {
       status: 200,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
