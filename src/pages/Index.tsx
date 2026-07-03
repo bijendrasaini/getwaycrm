@@ -5,7 +5,11 @@ import AnimatedSection from "@/components/AnimatedSection";
 import LiveAiVoiceDemoSection from "@/components/LiveAiVoiceDemoSection";
 import BuiltForBharat from "@/components/BuiltForBharat";
 import PromoBannerCard from "@/components/PromoBannerCard";
+import PlatformDiagram from "@/components/PlatformDiagram";
+import ComparisonSection from "@/components/ComparisonSection";
+import FounderSection from "@/components/FounderSection";
 import promoBanner from "@/assets/getway-ai-voice-banner-primary.png.asset.json";
+import neverMissBanner from "@/assets/getway-ai-voice-banner-never-miss-lead.png.asset.json";
 
 const stats = [
   { number: "20,000+", label: "Businesses Served" },
@@ -114,6 +118,20 @@ const Index = () => {
       </section>
 
       <LiveAiVoiceDemoSection />
+
+      <PlatformDiagram />
+
+      <ComparisonSection />
+
+      <section className="gradient-section-dark py-12 md:py-14">
+        <div className="container-wide mx-auto max-w-6xl">
+          <AnimatedSection>
+            <PromoBannerCard src={neverMissBanner.url} alt="GETWAY AI — Never Miss a Lead banner" />
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <FounderSection />
 
       <section className="gradient-section-dark py-16 border-y border-[hsl(200,25%,10%)]">
         <div className="container-wide">
