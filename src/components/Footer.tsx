@@ -79,7 +79,7 @@ const Footer = () => (
         ))}
       </div>
       <div className="flex flex-col items-center justify-between gap-4 border-t border-[hsl(200,25%,10%)] pt-8 md:flex-row">
-        <p className="text-sm text-[hsl(200,20%,35%)]">© 2006–{new Date().getFullYear()} GETWAY Technology. All rights reserved.</p>
+        <p className="text-sm text-[hsl(200,20%,35%)]">© 2006–{new Date().getFullYear()} GETWAY AI. All rights reserved.</p>
         <div className="flex flex-wrap items-center gap-6">
           <Link to="/privacy" className="text-sm text-[hsl(200,20%,35%)] transition-colors hover:text-primary-foreground">Privacy Policy</Link>
           <Link to="/terms" className="text-sm text-[hsl(200,20%,35%)] transition-colors hover:text-primary-foreground">Terms of Service</Link>
