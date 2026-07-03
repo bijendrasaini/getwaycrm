@@ -78,7 +78,7 @@ const Contact = () => {
                   <div>
                     <div className="text-[hsl(200,20%,45%)] text-xs uppercase tracking-wider">Address</div>
                     <div className="text-primary-foreground text-sm font-medium leading-relaxed">
-                      GETWAY TECHNOLOGY<br />
+                      GETWAY AI<br />
                       SCO 24, 2nd Floor,<br />
                       Huda Market, Sector-10A,<br />
                       Gurugram, Haryana – 122001<br />
