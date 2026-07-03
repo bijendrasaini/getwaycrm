@@ -119,6 +119,20 @@ const Index = () => {
 
       <LiveAiVoiceDemoSection />
 
+      <PlatformDiagram />
+
+      <ComparisonSection />
+
+      <section className="gradient-section-dark py-12 md:py-14">
+        <div className="container-wide mx-auto max-w-6xl">
+          <AnimatedSection>
+            <PromoBannerCard src={neverMissBanner.url} alt="GETWAY AI — Never Miss a Lead banner" />
+          </AnimatedSection>
+        </div>
+      </section>
+
+      <FounderSection />
+
       <section className="gradient-section-dark py-16 border-y border-[hsl(200,25%,10%)]">
         <div className="container-wide">
           <AnimatedSection className="mb-10 text-center">
